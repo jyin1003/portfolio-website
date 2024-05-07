@@ -1,24 +1,45 @@
+/* WEBSITE SETTING */
+:root {
+    --background-colour: rgb(9, 12, 52); /* #090c34 */
+    --highlight-colour: rgb(139, 200, 238); /* #8bc8ee */
+    --separation-colour: rgb(35, 96, 144); /* 236090 */
+    --external-link-colour: #984ade;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: #080b2e;
+    background-color: var(--background-colour);
 
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
     font-size: calc(10px + 2vmin);
-    color: white;
-
-    code {
-        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-        monospace;
-    }
 
     min-height: 100vh;  
+    color: white;
+} 
+
+/* PAGE COMPONENTS */
+
+/*navigation bar*/
+#nav-bar {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top:0;
+
+    height:60px;
+    width:100%;
+
+    background-color: rgba(35, 96, 144, 0.4);
+
+    animation: fade-in 1s ease;
 }
+
+/* PAGE ELEMNTS */
 
 .box-color {
     background-color: rgba(59, 136, 184, 0.15);
