@@ -33,7 +33,7 @@
 //         $(".popup").hide();
 //     });​​​​​​​​​​
 const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('section');
+const sections = document.querySelectorAll('.section');
 
 function handleScroll() {
     sections.forEach(section => {
