@@ -11,13 +11,15 @@
         <!--ensures initialising transition is smooth-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
+        <script src="script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="stylesheet" href="style.css"/>
 
         <title>Joy's Portfolio Website</title>   
     </head>
     <body>
-        <div id="container">
-            <div id="nav-bar">
+        <section id="container">
+            <header id="nav-bar">
                 <a href="index.html">
                     <img src="assets/logo_dark.svg" 
                         alt="logo-focused" 
@@ -25,27 +27,137 @@
                         width=auto 
                         height=60px/>
                 </a>
-                <div id="header-link-container">
-                    <div class="header-link">
+                <header id="header-link-container">
+                    <section class="header-link">
                         <a>RESUME</a>
-                    </div>
-                    <div class="header-link">
+                    </section>
+                    <section class="header-link">
                         <a>PROJECTS</a>
-                    </div>
-                    <div class="header-link">
+                    </section>
+                    <section class="header-link">
                         <a>GALLERY</a>
-                    </div>
-                </div>
-            </div>
+                    </section>
+                </header>
+            </header>
     
-            <div id="page-container">
-                <div id="side-header">
-                    1
-                </div>
-                <div id="content-container">
-                    2
-                </div> 
-            </div>
-        </div>
+            <section id="page-container">
+                <section id="side-header">
+                    <section id="header-info">
+                        <span id="name">JOY YIN</span>
+                        <section id="header-icons">
+                            <a href="https://www.linkedin.com/in/joy-yin/" 
+                                target="_blank">
+                            <img src="assets/linkedin.svg" 
+                                alt="LinkedIn Logo">
+                            </a>
+                            <a href="https://github.com/jyin1003" 
+                                target="_blank">
+                                <img src="assets/github.svg" 
+                                    alt="Github Logo">
+                            </a>
+                            <a href="mailto:jyin1003@gmail.com">
+                                <img src="assets/mail.svg"
+                                    alt="Mail Logo">
+                            </a>
+                        </section>
+
+                        <section id="stats-container">
+                            <span id="stat-info">
+                                Bachelor of Computer Science
+                            </span>
+                            <span id="stat-info">
+                                Brisbane, Australia 
+                            </span>                         
+                        </section>
+                    </section>
+                    <nav id = "side-header-links">
+                        <a href="#about-section">ABOUT</a>
+                        <a href="#resume-section">RESUME OVERVIEW</a>
+                        <a href="#projects-section">KEY PROJECTS</a>
+                        <a href="#pictures-section">PICTURES</a>
+                    </nav>
+                </section>
+                <section id="content-container">
+                    <section class="content">
+                        <section class="content-section" id="about-section">
+                            <section class="top-spacing">
+                            </section>
+                            <span class="section-heading">
+                                ABOUT
+                            </span>
+                            <section class="content-text">
+                                <p>
+                                    I'm currently majoring in<b>
+                                    Data Science </b>for my degree at the 
+                                    University of Queensland. Technology is a tool 
+                                    with diverse applications, which has led me to explore 
+                                    it's capabilities from <b>software development</b> to 
+                                    its use in <b>consulting</b> and <b>data analytics</b>. 
+                                </p>
+                                <p>
+                                    I have interests in <b> entrepreneurship, 
+                                    youth advocacy </b> and <b>sustainability</b>
+                                    and in my free time, i like to dabble in 
+                                    <b>ice-skating</b>, <b>short stories</b> and the <b>gym</b>.
+                                </p>
+                            </section>
+                        </section>
+                        
+                        <section class="content-section" id="resume-section">
+                            <section id="resume-heading-container">
+                                <span class="section-heading">
+                                    RESUME OVERVIEW
+                                </span>
+                                <a href="assets/JOY YIN - professional resume.pdf" download>
+                                    <img 
+                                        src="assets/download.svg" 
+                                        alt="Download-Icon"
+                                        id="download-icon">
+                                </a>
+                            </section>
+                            <span class="section-subheading">
+                                Skills
+                            </span>
+                            <div class="language-container">
+                                <div class="language">Java</div>
+                                <div class="popup">Expert</div>
+                                <div class="language">Python</div>
+                                <div class="language">C</div>
+                                <div class="language">Scripts</div>
+                                <div class="language">SQL</div>
+                                <div class="language">WebDev</div>
+                                <div class="language">Ruby</div>
+                            </div>
+                            <hr>
+                            <div class="language-container">
+                                <div class="language">Git/GitHub</div>
+                                <div class="language">Salesforce</div>
+                                <div class="language">Oracle Database</div>
+                            </div>
+                            <span class="section-subheading">
+                                Work Experience
+                            </span>
+                            <section class="content-text">
+                                huhuh
+                            </section>
+                        <section>
+                        
+                        <section class="content-section" id="projects-section">
+                            <span class="section-heading">
+                                PROJECTS
+                            </span>
+                        </section>
+                        
+                        <section class="content-section" id="pictures-section">
+                            <span class="section-heading">
+                                PICTURES
+                            </span>
+                        </section>
+                        
+                    </section>
+                </section> 
+            </section>
+        </section>
+        <script src="script.js"></script>
     </body>
 </html>
