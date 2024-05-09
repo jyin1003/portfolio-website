@@ -16,15 +16,19 @@
         <title>Joy's Portfolio Website</title>   
     </head>
     <body>
+        <!-- Overall page container -->
         <section id="container">
+            <!-- Navigation Header -->
             <header id="nav-bar">
                 <a href="index.html">
-                    <img src="assets/logo_dark.svg" 
+                    <!-- logo image link -->
+                    <img src="assets/logo_dark.svg"  
                         alt="logo-focused" 
                         id="logo" 
                         width=auto 
                         height=60px/>
                 </a>
+                <!-- header links -->
                 <header id="header-link-container">
                     <section class="header-link">
                         <a>RESUME</a>
@@ -38,8 +42,11 @@
                 </header>
             </header>
     
+            <!-- Container for Page Beneath the Header -->
             <section id="page-container">
+                <!-- Side Header -->
                 <section id="side-header">
+                    <!-- personal details with external links  -->
                     <section id="header-info">
                         <span id="name">JOY YIN</span>
                         <section id="header-icons">
@@ -58,7 +65,6 @@
                                     alt="Mail Logo">
                             </a>
                         </section>
-
                         <section id="stats-container">
                             <span id="stat-info">
                                 Bachelor of Computer Science
@@ -68,6 +74,8 @@
                             </span>                         
                         </section>
                     </section>
+
+                    <!-- links for in page navigation -->
                     <nav id = "side-header-links">
                         <a class="side-header-link" 
                             href="#about-section">ABOUT</a>
@@ -79,14 +87,19 @@
                             href="#pictures-section">PICTURES</a>
                     </nav>
                 </section>
+                
+                <!-- Scrollable Content Section -->
                 <section id="content-container">
                     <section class="content">
+                        <!-- About Section  -->
                         <section class="content-section" id="about-section">
+                            <!-- spacing to align with top of side header -->
                             <section class="top-spacing">
                             </section>
                             <span class="section-heading">
                                 ABOUT
                             </span>
+                            <!-- about me blurb -->
                             <section class="content-text">
                                 <p class="content-first">
                                     I'm currently majoring in<b>
@@ -105,11 +118,13 @@
                             </section>
                         </section>
                         
+                        <!-- Resume Section -->
                         <section class="content-section" id="resume-section">
                             <div id="resume-heading-container">
                                 <span class="section-heading">
                                     RESUME OVERVIEW
                                 </span>
+                                <!-- resume download icon and link -->
                                 <a href="assets/JOY YIN - professional resume.pdf" download>
                                     <img 
                                         src="assets/download.svg" 
@@ -117,9 +132,11 @@
                                         id="download-icon">
                                 </a>
                             </div>
+                            <!-- Skills Section -->
                             <span class="section-subheading">
                                 Skills
                             </span>
+                            <!-- languages -->
                             <div class="language-container">
                                 <div class="language" 
                                     data-popup="Expert">Java</div>
@@ -144,6 +161,7 @@
                                 <div class="language"
                                     data-popup="Skilled">Oracle Database</div>
                             </div>
+                            <!-- Work Experience Section -->
                             <span class="section-subheading">
                                 Work Experience
                             </span>
@@ -191,6 +209,7 @@
                                     </li>
                                 </ul>
                             </section>
+                            <!-- View More Link -->
                             <a class="view-more-container">
                                 <span class="view-more">View More</span>
                                 <img 
@@ -200,10 +219,12 @@
                             </a>
                         <section>
                         
+                        <!-- Projects Section  -->
                         <section class="content-section" id="projects-section">
                             <span class="section-heading">
                                 PROJECTS
                             </span>
+                            <!-- top 3 listed projects -->
                             <a class="project-container">
                                 <div class="img-container">
                                     <img 
@@ -258,6 +279,7 @@
                                     </p>
                                 </div>
                             </a>
+                            <!-- View More Link -->
                             <a class="view-more-container">
                                 <span class="view-more">View More</span>
                                 <img 
@@ -267,14 +289,13 @@
                             </a>
                         </section>
                         
+                        <!-- Pictures Section -->
                         <section class="content-section" id="pictures-section">
                             <span class="section-heading">
                                 PICTURES
                             </span>
-                            <!-- Slideshow container -->
                             <div class="slideshow-container">
-
-                                <!-- Images with caption text -->
+                                <!-- images with caption text -->
                                 <div class="slide fade">
                                     <img src="pictures/slideshow/SAP_2024_Cohort.svg" 
                                     class="slideshow-img">
@@ -311,13 +332,23 @@
                                     </div>
                                 </div>
                                 
-                                <!-- Buttons -->
-                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                                <!-- navigation buttons -->
+                                <a class="prev" onclick="plusSlides(-1)">
+                                    <img 
+                                        src="assets/slideshow-lArrow.svg" 
+                                        alt="Left-Arrow"
+                                        class="slideshow-arrow">
+                                </a>
+                                <a class="next" onclick="plusSlides(1)">
+                                    <img 
+                                        src="assets/slideshow-rArrow.svg" 
+                                        alt="Right-Arrow"
+                                        class="slideshow-arrow">
+                                </a>
                             </div>
-                            <br>
                         </section>
-                        <a class="view-more-container" id="gallery-view-more">
+                        <!-- View More Link -->
+                        <a class="view-more-container">
                             <span class="view-more">View More</span>
                             <img 
                                 src="assets/right-arrow.svg" 
@@ -328,6 +359,7 @@
                 </section> 
             </section>
         </section>
+        <!-- Link Javascript after HTML loaded -->
         <script src="script.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </body>

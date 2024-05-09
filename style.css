@@ -323,7 +323,7 @@ ul {
 .prev, .next { /* Next & previous buttons */
     cursor: pointer;
     position: absolute;
-    top: 50%;
+    top: 45%;
     width: auto;
     margin-top: -22px;
     padding: 16px;
@@ -334,12 +334,20 @@ ul {
     border-radius: 0 3px 3px 0;
     user-select: none;
 }
+.slideshow-arrow {
+    width: 50%;
+}
 .next {
-    right: 0; /* Position the "next button" to the right */
+    right: -50px; /* Position the "next button" to the right */
     border-radius: 3px 0 0 3px;
 }
-.prev:hover, .next:hover { /* On hover, add a black background color to arrows */
-    background-color: rgba(0,0,0,0.8);
+.next:hover { 
+    transform: scale(1.1) translateX(10px);
+    transition: transform 0.3s ease; 
+}
+.prev:hover {
+    transform: scale(1.1) translateX(-10px);
+    transition: transform 0.3s ease; 
 }
 .text {
     color: white; /* Caption text */
@@ -354,11 +362,9 @@ ul {
     left: 0;
     right: 0;
 }
-#gallery-view-more {
-    margin-top: -20px;
-}
+
 .focus {
-    background-color: #717171;
+    background-color: #ffffff;
 }
 .fade { /* Fading animation */
     animation-name: fade;
