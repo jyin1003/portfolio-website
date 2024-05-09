@@ -1,53 +1,79 @@
-// const languages = document.querySelectorAll('.language');
+// DYNAMIC NAVIGATION STATUS
+// put into a function to ensure it's only declared once
+(function() {
+    let scrollTimeoutId;
 
-// languages.forEach(language => {
-//     const popup = document.createElement('div');
-//     popup.classList.add('popup');
-//     popup.textContent = language.dataset.popup;
+    const changeNav = (entries, observer) => {
+        console.log('START');
+        let maxIntersectionRatio = 0;
+        let maxIntersectionSection = null;
+    
+        entries.forEach(entry => {
+            console.log('Entry:', entry.target);
+            const intersectionRatio = entry.intersectionRatio;
+            console.log('Intersection Ratio:', intersectionRatio);
+    
+            if (intersectionRatio > maxIntersectionRatio) {
+            maxIntersectionRatio = intersectionRatio;
+            maxIntersectionSection = entry.target;
+            console.log('Max Intersection Section:', maxIntersectionSection);
+            }
+        });
 
-//     language.appendChild(popup);
+        const updateNavLinks = () => {
+            if (maxIntersectionSection) {
+            const id = maxIntersectionSection.getAttribute('id');
+            console.log('Active Section ID:', id);
+    
+            const navLinks = document.querySelectorAll('.side-header-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') !== `#${id}`) {
+                link.classList.remove('active');
+                console.log('Removed "active" class from:', link);
+                }
+            });
+    
+            const newLink = document.querySelector(`a[href="#${id}"]`);
+            console.log('new link:', newLink);
+    
+            if (newLink) {
+                newLink.classList.add('active');
+                console.log('Added "active" class to new link.');
+            }
+            }
+        };
 
-//     language.addEventListener('mouseenter', () => {
-//     const rect = language.getBoundingClientRect();
-//     popup.style.top = `${rect.top - popup.offsetHeight - 10}px`;
-//     popup.style.left = `${rect.left + rect.width / 2 - popup.offsetWidth / 2}px`;
-//     popup.style.opacity = '1';
-//     popup.style.visibility = 'visible';
-// });
+        clearTimeout(scrollTimeoutId);
+        scrollTimeoutId = setTimeout(updateNavLinks, 200);
+    };
 
-// language.addEventListener('mouseleave', () => {
-//     popup.style.opacity = '0';
-//     popup.style.visibility = 'hidden';
-//     });
-// });
-// $(".language").mouseover(function() {
-//     $(this).children(".popup").show();
-// }).mouseout(function() {
-//     $(this).children(".popup").hide();
-// });
-// $(".language").hover(
-//     function(e){
-//         $(".popup").show();
-//     },
-//     function(e){
-//         $(".popup").hide();
-//     });​​​​​​​​​​
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('.section');
+    const options = {
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+    };
 
-function handleScroll() {
+    const observer = new IntersectionObserver(changeNav, options);
+    const sections = document.querySelectorAll('.content-section');
+
     sections.forEach(section => {
-    const sectionTop = section.offsetTop - section.offsetHeight / 2;
-    const sectionBottom = section.offsetTop + section.offsetHeight / 2;
-    const scrollPosition = window.scrollY + window.innerHeight / 2;
-
-    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-        const targetLink = document.querySelector(`a[href="#${section.id}"]`);
-        navLinks.forEach(link => link.classList.remove('active'));
-        targetLink.classList.add('active');
-    }
+        observer.observe(section);
     });
-}
+})();
 
-window.addEventListener('scroll', handleScroll);
-handleScroll(); // Call the function once to highlight the initial section
+// DYNAMIC POPUP POSITIONING 
+// Get all language containers
+const containers = document.querySelectorAll('.language-container');
+
+containers.forEach(container => {
+    // Get all language elements within the current container
+    const languages = container.querySelectorAll('.language');
+    console.log(languages);
+
+    // Check if each language element is the last child in its container
+    languages.forEach((language, index) => {
+        console.log(language);
+        if (index === languages.length - 1) {
+            language.classList.add('last-language');
+            console.log("adedd last language", language);
+        }
+    });
+});

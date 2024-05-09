@@ -11,8 +11,6 @@
         <!--ensures initialising transition is smooth-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
-        <script src="script.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <link rel="stylesheet" href="style.css"/>
 
         <title>Joy's Portfolio Website</title>   
@@ -71,10 +69,14 @@
                         </section>
                     </section>
                     <nav id = "side-header-links">
-                        <a href="#about-section">ABOUT</a>
-                        <a href="#resume-section">RESUME OVERVIEW</a>
-                        <a href="#projects-section">KEY PROJECTS</a>
-                        <a href="#pictures-section">PICTURES</a>
+                        <a class="side-header-link" 
+                            href="#about-section">ABOUT</a>
+                        <a class="side-header-link" 
+                            href="#resume-section">RESUME OVERVIEW</a>
+                        <a class="side-header-link" 
+                            href="#projects-section">KEY PROJECTS</a>
+                        <a  class="side-header-link" 
+                            href="#pictures-section">PICTURES</a>
                     </nav>
                 </section>
                 <section id="content-container">
@@ -86,7 +88,7 @@
                                 ABOUT
                             </span>
                             <section class="content-text">
-                                <p>
+                                <p class="content-first-para">
                                     I'm currently majoring in<b>
                                     Data Science </b>for my degree at the 
                                     University of Queensland. Technology is a tool 
@@ -94,7 +96,7 @@
                                     it's capabilities from <b>software development</b> to 
                                     its use in <b>consulting</b> and <b>data analytics</b>. 
                                 </p>
-                                <p>
+                                <p class="content-last-para">
                                     I have interests in <b> entrepreneurship, 
                                     youth advocacy </b> and <b>sustainability</b>
                                     and in my free time, i like to dabble in 
@@ -119,26 +121,41 @@
                                 Skills
                             </span>
                             <div class="language-container">
-                                <div class="language">Java</div>
-                                <div class="popup">Expert</div>
-                                <div class="language">Python</div>
-                                <div class="language">C</div>
-                                <div class="language">Scripts</div>
-                                <div class="language">SQL</div>
-                                <div class="language">WebDev</div>
-                                <div class="language">Ruby</div>
+                                <div class="language" 
+                                    data-popup="Expert">Java</div>
+                                <div class="language"
+                                    data-popup="Expert">Python</div>
+                                <div class="language"
+                                    data-popup="Proficient">C</div>
+                                <div class="language"
+                                    data-popup="Skilled">Scripts</div>
+                                <div class="language"
+                                    data-popup="Skilled">SQL</div>
+                                <div class="language"
+                                    data-popup="Skilled">WebDev</div>
+                                <div class="language"
+                                    data-popup="Novice">Ruby</div>
                             </div>
-                            <hr>
                             <div class="language-container">
-                                <div class="language">Git/GitHub</div>
-                                <div class="language">Salesforce</div>
-                                <div class="language">Oracle Database</div>
+                                <div class="language"
+                                    data-popup="Expert">Git/GitHub</div>
+                                <div class="language"
+                                    data-popup="Skilled">Salesforce</div>
+                                <div class="language"
+                                    data-popup="Skilled">Oracle Database</div>
                             </div>
                             <span class="section-subheading">
                                 Work Experience
                             </span>
                             <section class="content-text">
-                                huhuh
+                                <p class="work-title content-first-para">SAP</p>
+                                <i class="work-description">
+                                    Rotational Intern • Jan'24 - Present
+                                </i>
+                                <ul>
+                                    <li>Hi</li>
+                                    <li class="content-last-para">Hi</li>
+                                </ul>
                             </section>
                         <section>
                         
@@ -152,6 +169,7 @@
                             <span class="section-heading">
                                 PICTURES
                             </span>
+
                         </section>
                         
                     </section>
@@ -159,5 +177,6 @@
             </section>
         </section>
         <script src="script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </body>
 </html>
