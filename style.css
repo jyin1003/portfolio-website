@@ -132,15 +132,23 @@ b {color: var(--highlight-colour);}
     margin: min(3vh, 20px) 0;
 }
 /* remove default margins */
-.content-first-para {margin-top: 0;} 
-.content-last-para {margin-bottom: 0 !important;} 
+.content-first {margin-top: 0;} 
+.content-last {margin-bottom: 0 !important;} 
 ul {
     margin-bottom: 0;
     padding-left: 15px;
 }
 
-.box-color {
-    background-color: rgba(59, 136, 184, 0.15);
+.view-more-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    margin: 20px 0;
+}
+.view-more {
+    color: var(--highlight-colour);
+    margin-right: 10px;
 }
 
 /* PAGE SPECIFIC ELEMENTS */
@@ -254,6 +262,112 @@ ul {
     font-weight: bold;
     margin-bottom: -1px; /* remove spacing from bottom */
 }
+.work-description {font-size: 20px;}
+
+
+/* project elements */
+.project-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+    margin: 10px 0;
+
+    background-color: rgba(35, 96, 144, 0.5);
+    border-radius: 30px;
+}
+.img-container {
+    flex: 2;
+    padding-left: 20px;
+}
+.textbox-container {
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: green; */
+}
+.project-title {
+    color: var(--highlight-colour);
+    text-align: center;
+    font-weight: bold;
+}
+.project-description {
+    text-align: center;
+}
+
+/* picture slideshow */
+.slideshow-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    position: relative;
+
+    padding-top: 20px;
+    margin: auto;
+}
+.slide {display: none;} /* Hide the images by default */
+.slideshow-img {
+    display: block;
+    margin: 0 auto;
+}
+.caption-container {
+    text-align: center;
+    padding: 12px;
+    margin-top: 10px;
+}
+.prev, .next { /* Next & previous buttons */
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next {
+    right: 0; /* Position the "next button" to the right */
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover { /* On hover, add a black background color to arrows */
+    background-color: rgba(0,0,0,0.8);
+}
+.text {
+    color: white; /* Caption text */
+    font-size: 15px;
+    /* padding: 8px 12px; */
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#gallery-view-more {
+    margin-top: -20px;
+}
+.focus {
+    background-color: #717171;
+}
+.fade { /* Fading animation */
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
 
 /* RESPONSIVE DESIGN */
 
@@ -289,12 +403,16 @@ ul {
         font-size: 25px;
     }
     #logo {padding-top: 8px;}
-
-
     #side-header {
         height: calc(93vh - 60px - 12vh);
         padding-top: 10vh;
     }
+    .view-more {font-size: 23px;}
+    #view-more-arrow-img {
+        height:auto;
+        width: 20px;
+    }
+
     #name {font-size: 45px; padding-bottom: 10px;}
     #header-link-container {margin-right: 20px;}
     #stats-container {padding-top: 10px;}
@@ -319,8 +437,14 @@ ul {
         font-size: 16px;
     }
     .work-title {font-size: 24px;}
-    .work-description {font-size: 20px;}
     .content-text li {font-size: 18px;}
+
+    .project-img {margin-left: 20px;}
+    .project-title {font-size: 20px;}
+    .textbox-container {padding-right: 20px;}
+    .project-description {font-size: 18px;}
+
+    .slideshow-img {width:80%;}
 }
 
 /* Desktop/Monitor */
@@ -334,6 +458,12 @@ ul {
         height: calc(85vh - 60px - 10vh);
         padding-top: 10vh;
     }
+    .view-more {font-size: 25px;}
+    #view-more-arrow-img {
+        height:auto;
+        width: 25px;
+    }
+
     #name {font-size: 65px; padding-bottom: 20px;}
     #header-link-container {margin-right: 30px;}
     .header-link {margin: 30px;}
@@ -360,8 +490,13 @@ ul {
         font-size: 16px;
     }
     .work-title {font-size: 25px;}
-    .work-description {font-size: 20px;}
     .content-text li {font-size: 20px;}
+
+    .project-img {margin-left: 70px;}
+    .textbox-container {padding-right: 70px;}
+    .project-description {font-size: 20px;}
+
+    .slideshow-img {width:100%;}
 }
 
 /* Dynamic formatting for side header */
