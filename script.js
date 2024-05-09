@@ -86,12 +86,33 @@ function plusSlides(n) {
     showSlides(slideIndex += n);
 }
 function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("slide");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    var slides = document.getElementsByClassName("slide");
+    if (slides.length > 0) {
+        let i;
+        let slides = document.getElementsByClassName("slide");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex-1].style.display = "block";
     }
-    slides[slideIndex-1].style.display = "block";
 }
+
+// DYNAMIC HEADER NAVIGATION STATUS
+// Get the substring after the last '/'
+var currentPage = window.location.pathname;
+var lastSlashIndex = currentPage.lastIndexOf('/');
+var currentPage = currentPage.substring(lastSlashIndex + 1);
+
+// Find the link corresponding to the current page and add the 'active' class
+var links = document.querySelectorAll('.header-link');
+links.forEach(function(link) {
+    var hrefLink = link.getAttribute('href');
+    if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+        // Disable hover effects if link matches the current page
+        link.classList.remove('not-active');
+    }
+});
+
