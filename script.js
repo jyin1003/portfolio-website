@@ -66,16 +66,20 @@ const containers = document.querySelectorAll('.language-container');
 containers.forEach(container => {
     // Get all language elements within the current container
     const languages = container.querySelectorAll('.language');
-    console.log(languages);
 
-    // Check if each language element is the last child in its container
-    languages.forEach((language, index) => {
-        console.log(language);
-        if (index === languages.length - 1) {
-            language.classList.add('last-language');
-            console.log("adedd last language", language);
-        }
-    });
+    // Check if there are multiple language elements
+    if (languages.length > 1) {
+        // Iterate through each language element
+        languages.forEach((language, index) => {
+            console.log(language);
+            // Check if the current language element is the last one
+            if (index === languages.length - 1) {
+                // Add class to the last language element
+                language.classList.add('last-language');
+                console.log("added last language", language);
+            }
+        });
+    }
 });
 
 // PICTURE SLDESHOW

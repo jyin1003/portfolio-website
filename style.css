@@ -302,8 +302,6 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    /* background-color: green; */
 }
 .project-title {
     color: var(--highlight-colour);
@@ -401,7 +399,7 @@ ul {
     margin-bottom: 20px;
 }
 
-/* external link */
+/* Project elements */
 .external-link-container {
     display: flex;
     flex-direction: row;
@@ -413,6 +411,7 @@ ul {
     width:auto;
     height: 25px
 }
+.section-subheading {margin-top: 20px;}
 
 
 /* RESPONSIVE DESIGN */
