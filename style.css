@@ -137,9 +137,8 @@ q {
     overflow-y: auto;
     scroll-behavior: smooth;
 }
-.top-spacing {
-    padding-top: max(5vh, 40px);
-}
+.top-spacing {padding-top: max(5vh, 40px);}
+.bottom-spacing {padding-bottom: 40px;}
 
 /* PAGE ELEMENTS */
 
@@ -153,7 +152,7 @@ q {
     border-left: 3px solid var(--separation-colour); /* Apply border to the left edge */
     padding-left: min(25px, 2vw); /* Add padding to create space between text and border */
     padding: min(30px, 2vh) min(25px, 2vw);
-    margin: min(3vh, 20px) 0;
+    margin: min(2vh, 15px) 0;
 }
 /* remove default margins */
 .content-first {margin-top: 0;} 
@@ -279,8 +278,6 @@ ul {
     font-weight: bold;
     margin-bottom: -1px; /* remove spacing from bottom */
 }
-.work-description {font-size: 20px;}
-
 
 /* project elements */
 .project-container {
@@ -392,6 +389,19 @@ ul {
     to {opacity: 1}
 }
 
+/* customised styling for Program elements */
+.short-content {
+    padding: min(5px, 1vh) min(25px, 2vw);
+    margin:8px 0;
+}
+.short-content-first {
+    margin-top: 20px;
+}
+.short-content-last {
+    margin-bottom: 20px;
+}
+
+
 /* RESPONSIVE DESIGN */
 
 /* Mobile */
@@ -451,6 +461,8 @@ ul {
         font-size: 1.2em; /* Increase text size when active */
     }
 
+    #about-blurb {font-size: 18px;}
+
     .top-spacing {padding-top: 10vh;}
     .section-heading {font-size: 30px;}
     .section-subheading {font-size: 25px;}
@@ -462,7 +474,7 @@ ul {
         padding: 10px 15px;
         font-size: 16px;
     }
-    .work-title {font-size: 24px;}
+    .work-title {font-size: 22px;}
     .content-text li {font-size: 18px;}
     .resume-heading-container a {margin-bottom: 8px;}
 
@@ -509,6 +521,8 @@ ul {
         font-size: 2em; /* Increase text size when active */
     }
 
+    #about-blurb {font-size: 20px;}
+
     .top-spacing {padding-top: 12vh;}
     .section-heading {font-size: 40px;}
     .section-subheading {font-size: 30px;}
@@ -520,7 +534,7 @@ ul {
         padding: 8px 18px;
         font-size: 16px;
     }
-    .work-title {font-size: 25px;}
+    .work-title {font-size: 23px;}
     .content-text li {font-size: 20px;}
     .resume-heading-container a {margin-bottom: 15px;}
 
