@@ -401,6 +401,19 @@ ul {
     margin-bottom: 20px;
 }
 
+/* external link */
+.external-link-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--external-link-colour);
+}
+#external-link-img {
+    margin-left: 10px;
+    width:auto;
+    height: 25px
+}
+
 
 /* RESPONSIVE DESIGN */
 
@@ -416,7 +429,7 @@ ul {
 }
 
 /* Tablets */
-@media (height < 460px), (width > 480px) {
+@media (height < 460px), (width < 1090px)  {
     body {
         font-size: 25px;
     }
@@ -448,7 +461,7 @@ ul {
     }
 
     .name {font-size: 45px; padding-bottom: 10px;}
-    #header-link-container {margin-right: 20px; background-color: pink;}
+    #header-link-container {margin-right: 20px;}
     .header-link.not-active {font-size: 100%;} /* set font size to default when not active */
     .header-link.not-active:hover {font-size: 120%;} /* enlarge font upon hover */
     #stats-container {padding-top: 10px;}
@@ -495,7 +508,7 @@ ul {
 }
 
 /* Desktop/Monitor */
-@media (height >= 560px) and (width >= 1460px) {
+@media (height >= 480px) and (width >= 1460px) {
     body {
         font-size: calc(10px + 1.5vmin);
     }
@@ -512,7 +525,7 @@ ul {
     }
 
     .name {font-size: 65px; padding-bottom: 20px;}
-    #header-link-container {margin-right: 30px; background-color: green;}
+    #header-link-container {margin-right: 30px;}
     .header-link {
         margin: 30px;
         font-size: 30px;
