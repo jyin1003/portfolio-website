@@ -405,7 +405,7 @@ ul {
 /* RESPONSIVE DESIGN */
 
 /* Mobile */
-@media (max-width: 480px), (max-height: 460px) {
+@media (width <= 480px) {
     body {
     }
 
@@ -416,7 +416,7 @@ ul {
 }
 
 /* Tablets */
-@media (max-width: 1055px), (max-height: 460px) {
+@media (height < 460px), (width > 480px) {
     body {
         font-size: 25px;
     }
@@ -431,7 +431,7 @@ ul {
 }
 
 /* Laptops */
-@media (max-width: 1440px) {
+@media (height >= 460px) and (1090px <= width < 1460px) {
     body {
         font-size: 25px;
     }
@@ -448,14 +448,14 @@ ul {
     }
 
     .name {font-size: 45px; padding-bottom: 10px;}
-    #header-link-container {margin-right: 20px;}
+    #header-link-container {margin-right: 20px; background-color: pink;}
     .header-link.not-active {font-size: 100%;} /* set font size to default when not active */
     .header-link.not-active:hover {font-size: 120%;} /* enlarge font upon hover */
     #stats-container {padding-top: 10px;}
     #stat-info {font-size: 18px;}
     #side-header-links a:hover {
         color: var(--highlight-colour);
-        font-size: 1.2em; /* Increase text size when hovering */
+        font-size: 1.1em; /* Increase text size when hovering */
     }
     #side-header-links a.side-header-link.active {
         font-size: 1.2em; /* Increase text size when active */
@@ -484,10 +484,18 @@ ul {
     .project-description {font-size: 18px;}
 
     .slideshow-img {width:80%;}
+
+    .project-link {font-size: 20px;}
+    .project-link:hover {
+        font-size: 0.85em !important; /* Increase text size when hovering */
+    }
+    .project-link.active {
+        font-size: 0.85em !important; /* Increase text size when active */
+    }
 }
 
 /* Desktop/Monitor */
-@media (min-width: 1441px) {
+@media (height >= 560px) and (width >= 1460px) {
     body {
         font-size: calc(10px + 1.5vmin);
     }
@@ -504,7 +512,7 @@ ul {
     }
 
     .name {font-size: 65px; padding-bottom: 20px;}
-    #header-link-container {margin-right: 30px;}
+    #header-link-container {margin-right: 30px; background-color: green;}
     .header-link {
         margin: 30px;
         font-size: 30px;
@@ -515,10 +523,10 @@ ul {
     #side-header-links a {font-size: 35px;}
     #side-header-links a:hover {
         color: var(--highlight-colour);
-        font-size: 2em; /* Increase text size when hovering */
+        font-size: 1.8em; /* Increase text size when hovering */
     }
     #side-header-links a.side-header-link.active {
-        font-size: 2em; /* Increase text size when active */
+        font-size: 1.8em; /* Increase text size when active */
     }
 
     #about-blurb {font-size: 20px;}
@@ -543,6 +551,14 @@ ul {
     .project-description {font-size: 20px;}
 
     .slideshow-img {width:100%;}
+
+    .project-link {font-size: 25px !important;}
+    .project-link:hover {
+        font-size: 1.4em !important; /* Increase text size when hovering */
+    }
+    .project-link.active {
+        font-size: 1.4em !important; /* Increase text size when active */
+    }
 }
 
 /* Dynamic formatting for side header */
