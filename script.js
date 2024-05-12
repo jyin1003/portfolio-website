@@ -61,11 +61,11 @@
 
 // DYNAMIC POPUP POSITIONING 
 // Get all language containers
-const containers = document.querySelectorAll('.language-container');
+const containers = document.querySelectorAll('.bubble-container');
 
 containers.forEach(container => {
     // Get all language elements within the current container
-    const languages = container.querySelectorAll('.language');
+    const languages = container.querySelectorAll('.bubble');
 
     // Check if there are multiple language elements
     if (languages.length > 1) {
@@ -75,7 +75,7 @@ containers.forEach(container => {
             // Check if the current language element is the last one
             if (index === languages.length - 1) {
                 // Add class to the last language element
-                language.classList.add('last-language');
+                language.classList.add('last-bubble');
                 console.log("added last language", language);
             }
         });

@@ -161,6 +161,10 @@ ul {
     margin-bottom: 0;
     padding-left: 15px;
 }
+ol {
+    margin: 0;
+    margin-bottom: -10px;
+}
 
 .view-more-container {
     display: flex;
@@ -242,6 +246,7 @@ ul {
 }
 .bubble-container {
     display: flex;
+    align-items: center;
     margin: 15px 0;
 }
 .bubble {
@@ -257,7 +262,7 @@ ul {
     content: attr(data-popup); 
     position: absolute;
     top: -80%;
-    transform: translateX(-50%);
+    transform: translateX(-10%);
     background-color: rgba(139, 200, 238, 0.7);
     color: #000000;
     font-size: 18px;
@@ -273,7 +278,7 @@ ul {
     visibility: visible;
 }
 .last-bubble::before {
-    left: 30% !important; /* Adjust positioning for the last bubble element in its container */
+    left: -10%; /* Adjust positioning for the last bubble element in its container */
 }
 .work-title {
     font-weight: bold;
@@ -311,6 +316,10 @@ ul {
 }
 .project-description {
     text-align: center;
+}
+.project-tech {
+    margin-right: 10px;
+    font-weight: bold;
 }
 
 /* picture slideshow */
@@ -390,7 +399,7 @@ ul {
     to {opacity: 1}
 }
 
-/* customised styling for Program elements */
+/* Program elements */
 .short-content {
     padding: min(5px, 1vh) min(25px, 2vw);
     margin:8px 0;
@@ -617,9 +626,15 @@ button:hover {
     .content-text {font-size: 18px;}
 
     .bubble::before {
-        left: 60%;
+        left: 20%;
         padding: 10px 15px;
         font-size: 16px;
+    }
+    .project-bubble.last-bubble::before {
+        left: -80% !important; /* Adjust positioning for the last bubble element in its container */
+    }
+    .project-tech {
+        font-size: 20px;
     }
     .work-title {font-size: 22px;}
     .content-text li {font-size: 18px;}
@@ -687,6 +702,9 @@ button:hover {
         left: 70%;
         padding: 8px 18px;
         font-size: 16px;
+    }
+    .project-tech {
+        font-size: 25px;
     }
     .work-title {font-size: 23px;}
     .content-text li {font-size: 20px;}

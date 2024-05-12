@@ -97,15 +97,39 @@
                                 Tech Stack 
                             </span>
                             <dl class="bubble-container content-last">
+                                <span class="project-tech">Python:</span>
+                                <dt class="bubble project-bubble" 
+                                    data-popup="PyGoogleNews, BeautifulSoup, NewsCatcher, requests">
+                                    Web Scraping
+                                </dt>
+                                <dt class="bubble project-bubble" 
+                                    data-popup="Numpy, Pandas, scikit-learn, PyWaffle, Circlify">
+                                    Data Analysis
+                                </dt>
+                            </dl>
+                            <dl class="bubble-container content-last">
                                 <dt class="bubble" 
-                                data-popup="Expert">Python</dt>
+                                    data-popup="Vader">
+                                    Sentiment Analysis
+                                </dt>
+                                <dt class="bubble" 
+                                    data-popup="PyPortfolioOpt, YahooFinance">
+                                    Financial Optimisation
+                                </dt>
                             </dl>
                             <span class="section-subheading">
                                 Overview
                             </span>
                             <section class="content-text">
-                                <p class="content-first content-last">
-                                    sadfd
+                                <p class="content-first ">
+                                    Provide technical analysis to support a 
+                                    macro-driven hypothesis and portfolio strategy. 
+                                </p>
+                                <p class=" content-last">
+                                    Model the projection of assets using machine-learning,
+                                    quantify geopolitical sentiments and optimise 
+                                    portfolio allocations to achieve maximum returns 
+                                    per unit of risk. 
                                 </p>
                             </section>
                             <span class="section-subheading">
@@ -113,7 +137,57 @@
                             </span>
                             <section class="content-text">
                                 <p class="content-first content-last">
-                                    sadfd
+                                    <ol>
+                                        <li>
+                                            Conducted <b>sentiment analysis</b> by building 
+                                            a web-scraping tool that collated ~100
+                                            related news articles. Implement a counter
+                                            to track <b>word frequencies</b> over time.
+                                        </li>   
+                                        <li>
+                                            Model asset class projections by  
+                                            <b>collecting price data</b> and then splitting
+                                            the data 80:20 to train and backtest 
+                                            the <b>machine learning model</b> respectively. 
+                                        </li>
+                                        <li>
+                                            Optimised portfolio allocations using the
+                                            <b>Hierachial Risk Parity</b> technique
+                                            to derive weightings that would inform 
+                                            fund allocation decisions. 
+                                        </li>
+                                    </ol>
+                                </p>
+                            </section>
+                            <span class="section-subheading">
+                                Challenges
+                            </span>
+                            <section class="content-text">
+                                <p class="content-first content-last">
+                                    <ol>
+                                        <li>
+                                            Not all assets had price data that could be 
+                                            pulled from Yahoo Finance. Instead, I was able
+                                            to find online CSV files and then concatenate
+                                            them into a single dataframe with an 
+                                            <b>index of DateTime values</b>.
+                                        </li>   
+                                        <li>
+                                            The linear prediction didn't extend to 
+                                            the portfolio's intended 3-month horizon
+                                            so I used a <b>while loop</b> to continuously
+                                            iterate through the latest predicted price,
+                                            apply the trained linear regression model,
+                                            and then append to the dataframe.
+                                        </li>
+                                        <li>
+                                            Initially I attempted to connect to 
+                                            Google News <b>through an API key</b> but it
+                                            was far too difficult to extract the 
+                                            news article content so I instead switched
+                                            to the PyGoogleNews library.
+                                        </li>
+                                    </ol>
                                 </p>
                             </section>
                         </section>
