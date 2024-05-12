@@ -434,22 +434,16 @@ button {
     position: relative;
     cursor: pointer;
 }
-
-button::before {
-    background-color: transparent;
-}
-
+button::before {background-color: transparent;}
 button:hover {
     background-color: var(--highlight-colour);
     color: #000000;
 }
-
 .btn {
     background-color: rgba(35, 96, 144, 0.5);
     border: none;
     color: inherit;
 }
-
 .btn-active {
     background-color: var(--highlight-colour);
     color: #000000;
@@ -514,6 +508,40 @@ button:hover {
     right: 5px;
     cursor: pointer;
 }
+.overlay {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 8px);
+
+    background-color: rgba(35, 96, 144, 0.6); /* Transparent blue overlay */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.overlay::before {
+    color: transparent;
+}
+.overlay-content::before {
+    color: transparent;
+}
+.overlay-content {
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 90%;
+}
+.gallery-picture {
+    position: relative;
+}
+.gallery-picture:hover .overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
 
 /* RESPONSIVE DESIGN */
 
