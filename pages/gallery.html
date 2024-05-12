@@ -8,12 +8,13 @@
         <meta name="googlebot" content="notranslate" />
         <meta name="rating" content="safe for kids"/>
         <meta name="copyright" content="Copyright 2023"/> 
-        <!--ensures initialising transition is smooth-->
+        <!-- ensures initialising transition is smooth -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link rel="stylesheet" href="../style.css"/>
 
-        <title>Joy's Portfolio Website Gallery</title>   
+        <title>Joy's Portfolio Website Gallery</title>  
+        <link id="favicon" rel="icon" type="image/x-icon" href="../assets/logo_icon.svg"> 
     </head>
     <body>
         <!-- Overall page container -->
@@ -35,12 +36,89 @@
                 <a href="gallery.html" class="header-link not-active">GALLERY</a>
             </header>
         </header>
-        <section id="page-container">
-            <section id="side-header">
+        <section class="gallery-container" id="page-container">
+            <section id="gallery-buttons" class="side-header">
+                <span class="name">GALLERY FILTER</span>
+                <button class="btn btn-active" onclick="filterSelection('all')">Show All</button>
+                <button class="btn" onclick="filterSelection('work-experience')">Work Experience</button>
+                <button class="btn" onclick="filterSelection('programs')">Programs</button>
+                <button class="btn" onclick="filterSelection('leadership')">Leadership</button>
+                <button class="btn" onclick="filterSelection('other')">Other</button>
             </section>
+
             <section id="content-container">
                 <section class="top-spacing"></section>
-
+                <div class="row">
+                    <div class="column">
+                        <div class="gallery-picture programs">
+                            <img src="../pictures/Optiver_WOF_1.svg">
+                        </div>
+                        <div class="gallery-picture work-experience">
+                            <img src="../pictures/SAP_Dinner.svg">
+                        </div>
+                        <div class="gallery-picture programs">
+                            <img src="../pictures/Cisco_Mentor_And_Mentee.svg">
+                        </div>
+                        <div class="gallery-picture leadership">
+                            <img src="../pictures/Liveris-2023-EOY.svg">
+                        </div>
+                        <div class="gallery-picture other">
+                            <img src="../pictures/Rotary_Shipping_Container_2.svg">
+                        </div>
+                        <div class="gallery-picture leadership">
+                            <img src="../pictures/UQLIT_2024_Exec.svg">
+                        </div>
+                        <div class="gallery-picture other">
+                            <img src="../pictures/YPF_Banner.svg">
+                        </div>
+                        <div class="gallery-picture leadership">
+                            <img src="../pictures/UQES_Wagaya_Night.svg">
+                        </div>
+                        <div class="gallery-picture leadership">
+                            <img src="../pictures/UQLIT_Workshop.svg">
+                        </div>
+                        <div class="gallery-picture programs">
+                            <img src="../pictures/Cisco_Graduation.svg">
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="gallery-picture leadership">
+                            <img src="../pictures/UQES_Market_Day_2023.svg">
+                        </div>
+                        <div class="gallery-picture leadership">
+                            <img src="../pictures/Liveris-2023-Cohort.svg">
+                        </div>
+                        <div class="gallery-picture programs">
+                            <img src="../pictures/IMC_Social_Night.svg">
+                        </div>
+                        <div class="gallery-picture leadership">
+                            <img src="../pictures/UQLIT_Mock_Interviews.svg">
+                        </div>
+                        <div class="gallery-picture programs">
+                            <img src="../pictures/Rotary_BBQ.svg">
+                        </div>
+                        <div class="gallery-picture other">
+                            <img src="../pictures/YPF_Panel.svg">
+                        </div>
+                        <div class="gallery-picture other">
+                            <img src="../pictures/Rotary_Shipping_Container_1.svg">
+                        </div>
+                        <div class="gallery-picture leadership">
+                            <img src="../pictures/Liveris-2023-Cohort.svg">
+                        </div>
+                        <div class="gallery-picture other">
+                            <img src="../pictures/YPF_Judging_Cert.svg">
+                        </div>
+                        <div class="gallery-picture leadership">
+                            <img src="../pictures/UQES_2023_Ball.svg">
+                        </div>
+                        <div class="gallery-picture work-experience">
+                            <img src="../pictures/SAP_Buddy.svg">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
                 <section class="bottom-spacing"></section>
             </section> 
         </section>

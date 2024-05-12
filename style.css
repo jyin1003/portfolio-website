@@ -260,6 +260,7 @@ ul {
     transform: translateX(-50%);
     background-color: rgba(139, 200, 238, 0.7);
     color: #000000;
+    font-size: 18px;
     border-radius: 20px;
     white-space: nowrap;
     opacity: 0;
@@ -376,7 +377,7 @@ ul {
 }
 
 .focus {
-    background-color: #ffffff;
+    background-color: var(--highlight-colour);
 }
 .fade { /* Fading animation */
     animation-name: fade;
@@ -413,6 +414,81 @@ ul {
 }
 .section-subheading {margin-top: 20px;}
 
+/* Gallery elements */
+.gallery-option {margin-bottom: 15px;}
+.gallery-option::before { 
+    background-color: transparent;
+}
+.gallery-option:hover { /* hovering over filter options */
+    background-color: var(--highlight-colour);
+    color: #000000;
+}
+button {
+    margin-bottom: 15px;
+    font-weight: bold;
+    background-color: rgba(35, 96, 144, 0.5);
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    font-size: 18px;
+    position: relative;
+    cursor: pointer;
+}
+
+button::before {
+    background-color: transparent;
+}
+
+button:hover {
+    background-color: var(--highlight-colour);
+    color: #000000;
+}
+
+.btn {
+    background-color: rgba(35, 96, 144, 0.5);
+    border: none;
+    color: inherit;
+}
+
+.btn-active {
+    background-color: var(--highlight-colour);
+    color: #000000;
+    border: none !important;
+}
+.gallery-option-last {margin-bottom: 0px;}
+.gallery-container {margin-right: 1vw !important;}
+.gallery-img {
+    width: 150%;
+    height: auto;
+    max-width: 100%; 
+}
+.gallery-picture {
+    display: none; /* Initially hide all images */
+}
+.show {
+    display: block !important;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+/* Create equal columns */
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+/* Two column-layout */
+.column {
+    flex: 50%;
+    max-width: 45%;
+}
 
 /* RESPONSIVE DESIGN */
 
@@ -424,6 +500,10 @@ ul {
     #header-link-container {
         margin-right: 20px;
         background-color: red;
+    }
+    .column {
+        flex: 50%;
+        max-width: 50%;
     }
 }
 
@@ -480,7 +560,6 @@ ul {
     .section-subheading {font-size: 25px;}
     .content-text {font-size: 18px;}
 
-    .language {font-size: 18px;}
     .language::before {
         left: 60%;
         padding: 10px 15px;
@@ -548,7 +627,6 @@ ul {
     .section-subheading {font-size: 30px;}
     .content-text {font-size: 20px;}
 
-    .language {font-size: 18px;}
     .language::before {
         left: 70%;
         padding: 8px 18px;
