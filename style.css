@@ -291,6 +291,7 @@ ol {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 90%;
 
     padding: 20px;
     margin: 10px 0;
@@ -554,6 +555,14 @@ button:hover {
     opacity: 1; /* Show overlay on hover */
 }
 
+/* Mobile Elements */
+#header-info-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
 
 /* RESPONSIVE DESIGN */
 
@@ -561,7 +570,7 @@ button:hover {
 @media (width <= 480px) {
     body {
     }
-
+    
     #header-link-container {
         margin-right: 20px;
         background-color: red;
@@ -573,18 +582,104 @@ button:hover {
 }
 
 /* Tablets */
-@media (height < 460px), (width < 1090px)  {
-    body {
-        font-size: 25px;
-    }
-
+@media (height < 460px), (480px < width < 1090px)  {
+    body {font-size: 20px;}
     #header-link-container {
         margin-right: 20px;
         background-color: blue;
     }
-    #stat-info {
-        font-size: 10px;
+    #logo {padding-top: 10px;}
+    #content-container {
+        align-items: center;
+        width: 100%;
     }
+    .content-text {
+        border-left: none;
+        text-align: center;
+
+        border-left: 3px solid var(--separation-colour); /* Apply border to the top edge */
+        border-right: 3px solid var(--separation-colour); /* Apply border to the bottom edge */
+        max-width: 80vw; 
+
+    }
+    .content-text p {max-width: 100%;}
+    .content-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    ul {
+        text-align: left;
+    }
+    
+    #side-header-homepage {
+        display: none;
+    }
+    #header-info-mobile {
+        display: flex;
+        justify-content: space-between;
+    }
+    .name {
+        font-size: 50px; 
+        padding-bottom: 20px;
+    }
+    #header-icons {margin-bottom: 20px;}
+    #stat-info {font-size: 20px !important;}
+
+    .section-heading {
+        font-size: 35px;
+        text-align: center;
+
+        display: inline-block; /* Make the span a block element */
+        position: relative; /* Position relative for absolute positioning of the underline */
+
+        padding: 7px 0;
+    }
+    .resume-heading-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        /* justify-content: space-between center; */
+        position: relative; /* Position relative for absolute positioning of the underline */
+
+        /* border-top: 3px solid var(--separation-colour); Apply border to the top edge */
+        /* border-bottom: 3px solid var(--separation-colour); Apply border to the bottom edge */
+        width: 50%; /* Extend the underline to 50% of the width */     
+        
+        margin-bottom: 20px;
+    }
+    .resume-heading {
+        font-size: 35px;
+        text-align: center;
+
+        display: inline-block; /* Make the span a block element */
+        position: relative; /* Position relative for absolute positioning of the underline */
+
+        border-top: none;
+        border-bottom: none;
+
+        left: 0%; 
+        width: 100%; /* Extend the underline to 50% of the width */        
+
+        padding: 7px 0;
+    }
+    #download-icon {
+        width: 35px;
+        height: auto;
+        margin-right: 2vw;
+    }
+
+    #project-section {margin-bottom: 20px;}
+
+    #view-more-arrow-img {
+        height:auto;
+        width: 30px;
+    }
+
+    .project-container {width: 80vw;}
+    .img-container {padding-left: 5vw;}
+    .textbox-container {padding-right: 5vw;}
 }
 
 /* Laptops */
@@ -598,6 +693,7 @@ button:hover {
         height: calc(93vh - 60px - 12vh);
         padding-top: 10vh;
     }
+    #header-info-mobile {display: none;}
     .view-more {font-size: 23px;}
     #view-more-arrow-img {
         height:auto;
@@ -667,6 +763,7 @@ button:hover {
         height: calc(85vh - 60px - 10vh);
         padding-top: 10vh;
     }
+    #header-info-mobile {display: none;}
     .view-more {font-size: 25px;}
     #view-more-arrow-img {
         height:auto;
