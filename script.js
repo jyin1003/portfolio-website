@@ -171,3 +171,43 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
+
+// Get the popup container
+var popupContainer = document.getElementById("popup-container");
+var popupOverlay = document.querySelector(".popup-overlay");
+
+// Get all the popup links
+var popupLinks = document.querySelectorAll(".popup-picture");
+
+// Function to open the popup
+function openPopup(event) {
+    event.preventDefault(); // Prevent default link behavior
+    
+    // Set the src attribute of the popup image
+    var popupImage = document.getElementById("popup-image");
+    popupImage.src = this.href;
+    
+    // Display the popup
+    popupContainer.style.display = "block";
+    popupOverlay.classList.add("popup-visible"); // Show overlay
+    document.body.style.overflow = "hidden"; // Disable scrolling on the body
+}
+
+// Function to close the popup
+function closePopup() {
+    popupContainer.style.display = "none";
+    popupOverlay.classList.remove("popup-visible"); // Hide overlay
+    document.body.style.overflow = "auto"; // Enable scrolling on the body
+}
+
+// Loop through each link and attach a click event listener
+popupLinks.forEach(function(link) {
+    link.addEventListener("click", openPopup);
+});
+
+// Close the popup when the close button is clicked
+var closeBtn = document.querySelector("#popup-close");
+closeBtn.addEventListener("click", closePopup);
+
+// Close the popup when clicking outside of it
+popupOverlay.addEventListener("click", closePopup);

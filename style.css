@@ -250,8 +250,8 @@ ul {
     border-radius: 20px;
     padding: 8px 15px;
     margin-right: 10px;
+    font-size: 18px;
     position: relative; /* Add position relative to create a positioning context */
-    cursor: pointer; /* Change cursor to indicate an interactive element  */
 }
 .language::before {
     content: attr(data-popup); 
@@ -488,6 +488,31 @@ button:hover {
 .column {
     flex: 50%;
     max-width: 45%;
+}
+#popup-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--separation-colour);
+    z-index: 999;
+    padding: 30px; /* Increase padding */
+    border-radius: 10px; /* Increase border radius */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Increase box shadow */
+}
+#popup-container img {
+    width: auto;
+    height: 50vh;
+}
+#popup-close {
+    width: 40px !important;
+    height: auto !important;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
 }
 
 /* RESPONSIVE DESIGN */
