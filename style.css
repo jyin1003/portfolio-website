@@ -240,11 +240,11 @@ ul {
     width:auto;
     height: min(50px, 6vh);
 }
-.language-container {
+.bubble-container {
     display: flex;
     margin: 15px 0;
 }
-.language {
+.bubble {
     font-weight: bold;
     background-color: rgba(35, 96, 144, 0.5);
     border-radius: 20px;
@@ -253,7 +253,7 @@ ul {
     font-size: 18px;
     position: relative; /* Add position relative to create a positioning context */
 }
-.language::before {
+.bubble::before {
     content: attr(data-popup); 
     position: absolute;
     top: -80%;
@@ -268,12 +268,12 @@ ul {
     transition: opacity 0.3s, visibility 0.3s;
     z-index: 1;
 } 
-.language:hover::before {
+.bubble:hover::before {
     opacity: 1;
     visibility: visible;
 }
-.last-language::before {
-    left: 30% !important; /* Adjust positioning for the last language element in its container */
+.last-bubble::before {
+    left: 30% !important; /* Adjust positioning for the last bubble element in its container */
 }
 .work-title {
     font-weight: bold;
@@ -323,7 +323,10 @@ ul {
     padding-top: 20px;
     margin: auto;
 }
-.slide {display: none;} /* Hide the images by default */
+.slide {
+    display: none; /* hide the images by default */
+    margin-bottom: 0px; /* remove default figure spacing from bottom */
+} 
 .slideshow-img {
     display: block;
     margin: 0 auto;
@@ -363,9 +366,8 @@ ul {
     transition: transform 0.3s ease; 
 }
 .text {
-    color: white; /* Caption text */
-    font-size: 15px;
-    /* padding: 8px 12px; */
+    color: white; /* gallery caption text */
+    font-size: 18px;
     position: absolute;
     bottom: 8px;
     width: 100%;
@@ -493,6 +495,7 @@ button:hover {
     z-index: 999;
     padding: 30px; /* Increase padding */
     border-radius: 10px; /* Increase border radius */
+    border-color: var(--separation-colour);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Increase box shadow */
 }
 #popup-container img {
@@ -613,7 +616,7 @@ button:hover {
     .section-subheading {font-size: 25px;}
     .content-text {font-size: 18px;}
 
-    .language::before {
+    .bubble::before {
         left: 60%;
         padding: 10px 15px;
         font-size: 16px;
@@ -680,7 +683,7 @@ button:hover {
     .section-subheading {font-size: 30px;}
     .content-text {font-size: 20px;}
 
-    .language::before {
+    .bubble::before {
         left: 70%;
         padding: 8px 18px;
         font-size: 16px;
