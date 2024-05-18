@@ -1,63 +1,65 @@
 // DYNAMIC NAVIGATION STATUS
 // put into a function to ensure it's only declared once
-(function() {
-    let scrollTimeoutId;
+document.addEventListener('DOMContentLoaded', function() {
+    (function() {
+        let scrollTimeoutId;
 
-    const changeNav = (entries, observer) => {
-        console.log('START');
-        let maxIntersectionRatio = 0;
-        let maxIntersectionSection = null;
-    
-        entries.forEach(entry => {
-            console.log('Entry:', entry.target);
-            const intersectionRatio = entry.intersectionRatio;
-            console.log('Intersection Ratio:', intersectionRatio);
-    
-            if (intersectionRatio > maxIntersectionRatio) {
-            maxIntersectionRatio = intersectionRatio;
-            maxIntersectionSection = entry.target;
-            console.log('Max Intersection Section:', maxIntersectionSection);
-            }
-        });
+        const changeNav = (entries, observer) => {
+            console.log('START');
+            let maxIntersectionRatio = 0;
+            let maxIntersectionSection = null;
 
-        const updateNavLinks = () => {
-            if (maxIntersectionSection) {
-            const id = maxIntersectionSection.getAttribute('id');
-            console.log('Active Section ID:', id);
-    
-            const navLinks = document.querySelectorAll('.side-header-link');
-            navLinks.forEach(link => {
-                if (link.getAttribute('href') !== `#${id}`) {
-                link.classList.remove('active');
-                console.log('Removed "active" class from:', link);
+            entries.forEach(entry => {
+                console.log('Entry:', entry.target);
+                const intersectionRatio = entry.intersectionRatio;
+                console.log('Intersection Ratio:', intersectionRatio);
+
+                if (intersectionRatio > maxIntersectionRatio) {
+                    maxIntersectionRatio = intersectionRatio;
+                    maxIntersectionSection = entry.target;
+                    console.log('Max Intersection Section:', maxIntersectionSection);
                 }
             });
-    
-            const newLink = document.querySelector(`a[href="#${id}"]`);
-            console.log('new link:', newLink);
-    
-            if (newLink) {
-                newLink.classList.add('active');
-                console.log('Added "active" class to new link.');
-            }
-            }
+
+            const updateNavLinks = () => {
+                if (maxIntersectionSection) {
+                    const id = maxIntersectionSection.getAttribute('id');
+                    console.log('Active Section ID:', id);
+
+                    const navLinks = document.querySelectorAll('.side-header-link');
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') !== `#${id}`) {
+                            link.classList.remove('active');
+                            console.log('Removed "active" class from:', link);
+                        }
+                    });
+
+                    const newLink = document.querySelector(`a[href="#${id}"]`);
+                    console.log('new link:', newLink);
+
+                    if (newLink) {
+                        newLink.classList.add('active');
+                        console.log('Added "active" class to new link.');
+                    }
+                }
+            };
+
+            clearTimeout(scrollTimeoutId);
+            scrollTimeoutId = setTimeout(updateNavLinks, 100);
         };
 
-        clearTimeout(scrollTimeoutId);
-        scrollTimeoutId = setTimeout(updateNavLinks, 100);
-    };
+        const options = {
+            threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+        };
 
-    const options = {
-        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
-    };
+        const observer = new IntersectionObserver(changeNav, options);
+        const sections = document.querySelectorAll('.content-section');
 
-    const observer = new IntersectionObserver(changeNav, options);
-    const sections = document.querySelectorAll('.content-section');
-
-    sections.forEach(section => {
-        observer.observe(section);
-    });
-})();
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    })();
+});
 
 // DYNAMIC POPUP POSITIONING 
 // Get all language containers
@@ -82,44 +84,67 @@ containers.forEach(container => {
     }
 });
 
+
 // PICTURE SLDESHOW
-let slideIndex = 1;
-showSlides(slideIndex);
-// Button controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-function showSlides(n) {
-    var slides = document.getElementsByClassName("slide");
-    if (slides.length > 0) {
-        let i;
-        let slides = document.getElementsByClassName("slide");
-        if (n > slides.length) {slideIndex = 1}
-        if (n < 1) {slideIndex = slides.length}
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to control slides
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Function to display slides
+    function showSlides(n) {
+        var slides = document.getElementsByClassName("slide");
+        if (slides.length > 0) {
+            let i;
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex-1].style.display = "block";
         }
-        slides[slideIndex-1].style.display = "block";
     }
-}
 
-// DYNAMIC HEADER NAVIGATION STATUS
-// Get the substring after the last '/'
-var currentPage = window.location.pathname;
-var lastSlashIndex = currentPage.lastIndexOf('/');
-var currentPage = currentPage.substring(lastSlashIndex + 1);
+    // Initialize slide index and display slides
+    let slideIndex = 1;
+    showSlides(slideIndex);
 
-// Find the link corresponding to the current page and add the 'active' class
-var links = document.querySelectorAll('.header-link');
-links.forEach(function(link) {
-    var hrefLink = link.getAttribute('href');
-    if (link.getAttribute('href') === currentPage) {
-        link.classList.add('active');
-        // Disable hover effects if link matches the current page
-        link.classList.remove('not-active');
-    }
+    // Event listeners for button controls
+    document.querySelectorAll('.prev').forEach(button => {
+        button.addEventListener('click', () => {
+            plusSlides(-1);
+        });
+    });
+
+    document.querySelectorAll('.next').forEach(button => {
+        button.addEventListener('click', () => {
+            plusSlides(1);
+        });
+    });
 });
 
+
+
+// DYNAMIC HEADER NAVIGATION STATUS
+document.addEventListener("DOMContentLoaded", function() {
+    // DYNAMIC HEADER NAVIGATION STATUS
+    // Get the substring after the last '/'
+    var currentPage = window.location.pathname;
+    var lastSlashIndex = currentPage.lastIndexOf('/');
+    currentPage = currentPage.substring(lastSlashIndex + 1);
+
+    // Find the link corresponding to the current page and add the 'active' class
+    var links = document.querySelectorAll('.header-link');
+    links.forEach(function(link) {
+        var hrefLink = link.getAttribute('href');
+        if (link.getAttribute('href') === currentPage) {
+            link.classList.add('active');
+            // Disable hover effects if link matches the current page
+            link.classList.remove('not-active');
+        }
+    });
+});
 // GALLERY FILTER
 filterSelection("all") // Execute the function and show all columns
 function filterSelection(c) {
@@ -210,3 +235,78 @@ closeBtn.addEventListener("click", closePopup);
 // Close the popup when clicking outside of it
 popupOverlay.addEventListener("click", closePopup);
 
+// UPLOAD PICTURE
+document.addEventListener('DOMContentLoaded', (event) => {
+    const chocolateButton = document.getElementById('chocolateButton');
+    const chocolateText = document.getElementById('chocolateText');
+
+    chocolateButton.addEventListener('click', () => {
+        chocolateText.textContent = 'Here is your chocolate!';
+    });
+});
+
+// GENERATE FUN FACT
+var typingInProgress = false;
+
+function getRandomFact() {
+    var funFacts = [
+        'I once ate only chocolate for three days straight.',
+        'I\'ve danced for the Australian Ballet School!',
+        'I still sleep with the pillow pet I got when I was 7...',
+        'Caffeine doesn\'t impact me at all.',
+        'I\'ve always had a part-time job since I was 14.',
+        'I have a scar on my thigh from trying to climb over a fence...',
+        'I\'ve never successfully baked macarons despite over 20 attempts...',
+        'I once fainted in the gym.',
+        'For a period of time, I drank almost 2L of soda daily.',
+        'I got chicken pox during the week of Grade 5 NAPLAN.',
+        'Walking into air-conditioned rooms make me sneeze.',
+        'My right ankle had three completed severed ligaments in 2021.',
+        'I went lost and broke three sets of earphones within 4 months.',
+        'I get really bad asian flush.',
+    ];
+
+    // Get a random index within the range of possible texts
+    var randomIndex = Math.floor(Math.random() * funFacts.length);
+    // Return the randomly selected text
+    return funFacts[randomIndex];
+}
+
+function getFunFact() {
+    if (typingInProgress) {
+        return; // Ignore button press if typing is in progress
+    }
+    const button = document.getElementById('fun-fact-button'); 
+
+    button.classList.add('faded-button');
+
+    var i = 0;
+    var txt = getRandomFact(); // Get a random text
+    var speed = 50;
+    console.log("pressed");
+    const funfact = document.getElementById('fun-fact');
+
+    // ensure user cannot repeatedly click button to generate fun fact
+    // and cause them to overwrite each other
+    if (funfact.classList.contains('generated')) {
+        funfact.textContent = '';
+    } else {
+        funfact.classList.add('generated');
+    }
+
+    // fade out the button to let users know it cannot be clicked
+
+    function typeWriter() {
+        typingInProgress = true; // Typing is in progress
+        if (i < txt.length) {
+            funfact.textContent += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+        } else {
+            typingInProgress = false; // Typing completed
+            button.classList.remove('faded-button');
+        }
+    }
+
+    typeWriter();
+}

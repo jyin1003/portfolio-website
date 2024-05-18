@@ -400,6 +400,30 @@ ol {
     to {opacity: 1}
 }
 
+/* Fun Fact elements */
+#fun-fact-button {
+    color: white;
+
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: rgba(35, 96, 144, 0.5) !important;
+    border-radius: 20px !important;
+    border: none;
+}
+.faded-button {
+    opacity: 0.5; 
+    cursor: not-allowed; /* Change cursor to pointer when it cannot be clicked */
+}
+#fun-fact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 3px solid var(--separation-colour); /* Apply border to the left edge */
+    padding-left: min(25px, 2vw); 
+    height: 7vh;
+    margin: min(2vh, 15px) 0;
+}
+
 /* Program elements */
 .short-content {
     padding: min(5px, 1vh) min(25px, 2vw);
@@ -560,6 +584,7 @@ button:hover {
 .gallery-picture:hover .overlay {
     opacity: 1; /* Show overlay on hover */
 }
+
 
 /* Mobile Elements */
 #header-info-mobile {
@@ -758,6 +783,9 @@ button:hover {
     #popup-description {
         font-size: 17px;
     }
+
+    #fun-fact-button {font-size: 17px;}
+    #fun-fact {font-size: 17px;}
 }
 
 /* Desktop/Monitor */
@@ -827,6 +855,11 @@ button:hover {
     }
     .project-link.active {
         font-size: 1.4em !important; /* Increase text size when active */
+    }
+
+    #fun-fact-button {font-size: 20px;}
+    #fun-fact {
+        font-size: 20px;
     }
 }
 

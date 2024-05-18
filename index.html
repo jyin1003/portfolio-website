@@ -12,6 +12,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link rel="stylesheet" href="style.css"/>
+        <script src="script.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
         <title>Joy's Portfolio Website</title>   
         <link id="favicon" rel="icon" type="image/x-icon" href="../assets/logo_icon.svg"> 
@@ -79,6 +81,8 @@
                             href="#projects-section">KEY PROJECTS</a>
                         <a  class="side-header-link" 
                             href="#pictures-section">PICTURES</a>
+                        <a  class="side-header-link" 
+                            href="#facts-section">FUN FACTS</a>
                     </nav>
                 </section>
                 
@@ -386,10 +390,18 @@
                     </section>
                 </section> 
             </section>
+            <section class="content-section" id="facts-section">
+                <span class="section-heading">
+                    FUN FACTS
+                </span>
+                <div id="fun-fact-container">
+                    <button onclick="getFunFact()" id="fun-fact-button">
+                        Click for a personal fun fact!
+                    </button>
+                    <div class="" id="fun-fact"></div>
+                </div>
+            </section>
             <section class="bottom-spacing"></section>
         </section>
-        <!-- Link Javascript after HTML loaded -->
-        <script src="script.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </body>
 </html>
