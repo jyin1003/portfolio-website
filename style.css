@@ -521,6 +521,12 @@ button:hover {
     right: 5px;
     cursor: pointer;
 }
+#popup-description {
+    text-align: center;
+    word-wrap: break-word;
+    margin-top: 10px;
+    max-width:90%;
+}
 .overlay {
     position: absolute;
     top: 8px;
@@ -640,11 +646,8 @@ button:hover {
         display: flex;
         flex-direction: row;
         align-items: center;
-        /* justify-content: space-between center; */
         position: relative; /* Position relative for absolute positioning of the underline */
 
-        /* border-top: 3px solid var(--separation-colour); Apply border to the top edge */
-        /* border-bottom: 3px solid var(--separation-colour); Apply border to the bottom edge */
         width: 50%; /* Extend the underline to 50% of the width */     
         
         margin-bottom: 20px;
@@ -672,6 +675,7 @@ button:hover {
 
     #project-section {margin-bottom: 20px;}
 
+    .view-more {font-size: 20px;}
     #view-more-arrow-img {
         height:auto;
         width: 30px;
@@ -749,6 +753,10 @@ button:hover {
     }
     .project-link.active {
         font-size: 0.85em !important; /* Increase text size when active */
+    }
+
+    #popup-description {
+        font-size: 17px;
     }
 }
 
