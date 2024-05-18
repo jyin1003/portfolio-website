@@ -612,8 +612,8 @@ button:hover {
     }
 }
 
-/* Tablets */
-@media (height < 460px), (480px < width < 1090px)  {
+/* Vertical */
+@media (height < 550px), (480px < width < 1090px), ((height < 620px) and (width >= 1460px))  {
     body {font-size: 20px;}
     #header-link-container {
         margin-right: 20px;
@@ -709,10 +709,26 @@ button:hover {
     .project-container {width: 80vw;}
     .img-container {padding-left: 5vw;}
     .textbox-container {padding-right: 5vw;}
+
+
+
+    #fun-fact-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #fun-fact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 5vh;
+    }
 }
 
 /* Laptops */
-@media (height >= 460px) and (1090px <= width < 1460px) {
+@media (height >= 550px) and (1090px <= width < 1460px) {
     body {
         font-size: 25px;
     }
@@ -788,15 +804,16 @@ button:hover {
     #fun-fact {font-size: 17px;}
 }
 
+
 /* Desktop/Monitor */
-@media (height >= 480px) and (width >= 1460px) {
+@media (height >= 620px) and (width >= 1460px) {
     body {
         font-size: calc(10px + 1.5vmin);
     }
     #logo {padding-top: 12px;}
 
     #side-header-homepage {
-        height: calc(85vh - 60px - 10vh);
+        height: calc(85vh - 60px - 5vh);
         padding-top: 10vh;
     }
     #header-info-mobile {display: none;}
@@ -864,9 +881,25 @@ button:hover {
 }
 
 /* Dynamic formatting for side header */
-@media (max-height: 520px) { /* change to vert layout at 460px max-height*/
+@media (max-height: 580px) { /* change to vert layout at 460px max-height*/
     #side-header-homepage {
         height: calc(90vh - 65px);
         padding-top: 8vh;
+    }
+}
+
+@media (max-height: 750px) and (width >= 1460px) { /* change to vert layout at 460px max-height*/
+    #side-header-homepage {
+        height: calc(90vh - 65px);
+        padding-top: 8vh;
+    }
+
+    #header-link-container {background-color: purple;}
+}
+
+@media (width < 1460px) and (height > 650px) {
+    #side-header-homepage {
+        height: calc(60vh);
+        padding-top: 18vh;
     }
 }

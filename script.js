@@ -262,7 +262,7 @@ function getRandomFact() {
         'I got chicken pox during the week of Grade 5 NAPLAN.',
         'Walking into air-conditioned rooms make me sneeze.',
         'My right ankle had three completed severed ligaments in 2021.',
-        'I went lost and broke three sets of earphones within 4 months.',
+        'I lost and broke three sets of earphones within 4 months.',
         'I get really bad asian flush.',
     ];
 
