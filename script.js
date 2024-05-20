@@ -261,8 +261,8 @@ function getRandomFact() {
         'For a period of time, I drank almost 2L of soda daily.',
         'I got chicken pox during the week of Grade 5 NAPLAN.',
         'Walking into air-conditioned rooms make me sneeze.',
-        'My right ankle had three completed severed ligaments in 2021.',
-        'I lost and broke three sets of earphones within 4 months.',
+        'My right ankle had three completely severed ligaments in 2021.',
+        'I lost and/or broke three sets of earphones within 4 months.',
         'I get really bad asian flush.',
     ];
 
