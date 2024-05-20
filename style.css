@@ -628,14 +628,15 @@ button:hover {
         justify-content: center;
         align-items: center;
     }
-    
+    .top-spacing {padding-top: max(3vh, 30px);}
+
     .name {
-        font-size: 30px; 
+        font-size: 33px; 
     }
     #stat-info {font-size: 18px !important;}
 
     .section-heading {
-        font-size: 20px;
+        font-size: 23px;
         text-align: center;
 
         display: inline-block; /* Make the span a block element */
@@ -711,6 +712,7 @@ button:hover {
         margin-right: 2vw;
         margin-bottom: -5px;
     }
+    .work-title {font-size: 17px;}
     .work-exp.view-more-container {margin-top: -35px;}
     .view-more-container {margin-top: 15px;}
     #view-more-arrow-img {
@@ -762,12 +764,20 @@ button:hover {
         padding: 0 5px;
     }
 
+    #mobile-skills-spacing {
+        height: 0px;
+        margin-bottom: -20px;
+    }
     .short-content {
         width: 80vw;
         max-width: 80vw;
         border-left: none;
         border-right: none;
         padding-bottom: 10px;
+    }
+    .last-content-text {
+        margin-top: -5px;
+        margin-bottom: 20px !important;
     }
     .column {
         flex: 50%;
@@ -776,7 +786,7 @@ button:hover {
 }
 
 /* Vertical */
-@media (height < 550px), (500px < width < 1090px), ((height < 620px) and (width >= 1460px))  {
+@media  (500px < width < 1090px), ((height < 620px) and (width >= 1460px))  {
     body {font-size: 20px;}
     #header-link-container {
         margin-right: 20px;
