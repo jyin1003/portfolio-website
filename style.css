@@ -598,7 +598,7 @@ button:hover {
 /* RESPONSIVE DESIGN */
 
 /* Mobile */
-@media (width <= 480px) {
+@media (width <= 500px) {
     body {
     }
     
@@ -613,7 +613,7 @@ button:hover {
 }
 
 /* Vertical */
-@media (height < 550px), (480px < width < 1090px), ((height < 620px) and (width >= 1460px))  {
+@media (height < 550px), (500px < width < 1090px), ((height < 620px) and (width >= 1460px))  {
     body {font-size: 20px;}
     #header-link-container {
         margin-right: 20px;
@@ -630,18 +630,6 @@ button:hover {
         border-right: none;
         width: 80vw; 
     }
-    /* .text-content-first {
-        margin-top: 0px;
-    }
-    .text-content-last {
-        margin-top: -10px;
-        margin-bottom: 20px;
-    }
-    .text-content-middle {
-        margin-top: -10px;
-        border-left: none;
-        border-right: none;
-    } */
     .short-content {
         width: 80vw;
         max-width: 80vw;
@@ -649,8 +637,6 @@ button:hover {
         border-right: none;
         padding-bottom: 10px;
     }
-
-
     .content-text p {max-width: 100%;}
     .content-section {
         display: flex;
@@ -769,6 +755,32 @@ button:hover {
 
     #skills-section .section-heading {
         margin-bottom: 20px;
+    }
+
+    .section-heading {
+        margin-bottom: 15px;
+    }
+    .section-subheading {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        width: 200px;
+        font-size: 25px;
+        border-bottom: 5px solid var(--separation-colour);
+    }
+    .external-link-container {margin-bottom: 20px;}
+    .proj-desc {margin-top: 0;}
+    .bubble {
+        text-align: center;        
+    }
+    .bubble::before {
+        left: 0%;
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+    .project-bubble.last-bubble::before {
+        left: -130% !important; /* Adjust positioning for the last bubble element in its container */
     }
 }
 
