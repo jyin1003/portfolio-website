@@ -621,18 +621,36 @@ button:hover {
     }
     #logo {padding-top: 10px;}
     #content-container {
-        align-items: center;
         width: 100%;
     }
     .content-text {
         border-left: none;
         text-align: center;
-
-        border-left: 3px solid var(--separation-colour); /* Apply border to the top edge */
-        border-right: 3px solid var(--separation-colour); /* Apply border to the bottom edge */
-        max-width: 80vw; 
-
+        border-left: none;
+        border-right: none;
+        width: 80vw; 
     }
+    /* .text-content-first {
+        margin-top: 0px;
+    }
+    .text-content-last {
+        margin-top: -10px;
+        margin-bottom: 20px;
+    }
+    .text-content-middle {
+        margin-top: -10px;
+        border-left: none;
+        border-right: none;
+    } */
+    .short-content {
+        width: 80vw;
+        max-width: 80vw;
+        border-left: none;
+        border-right: none;
+        padding-bottom: 10px;
+    }
+
+
     .content-text p {max-width: 100%;}
     .content-section {
         display: flex;
@@ -647,13 +665,15 @@ button:hover {
     #side-header-homepage {
         display: none;
     }
+    .side-header {
+        display: none;
+    }
     #header-info-mobile {
         display: flex;
         justify-content: space-between;
     }
     .name {
         font-size: 50px; 
-        padding-bottom: 20px;
     }
     #header-icons {margin-bottom: 20px;}
     #stat-info {font-size: 20px !important;}
@@ -664,18 +684,33 @@ button:hover {
 
         display: inline-block; /* Make the span a block element */
         position: relative; /* Position relative for absolute positioning of the underline */
+        border-bottom: 3px solid var(--separation-colour);
 
         padding: 7px 0;
+        width: 80vw;
+    }
+    .last-content-text {
+        margin-top: -5px;
+        margin-bottom: 30px;
+    }
+    
+    #about-blurb {
+        margin-bottom: 20px;
+    }
+
+    #resume-underline {
+        width: 80vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 3px solid var(--separation-colour);
+        margin-bottom: 20px;     
     }
     .resume-heading-container {
         display: flex;
         flex-direction: row;
         align-items: center;
-        position: relative; /* Position relative for absolute positioning of the underline */
-
-        width: 50%; /* Extend the underline to 50% of the width */     
-        
-        margin-bottom: 20px;
+        position: relative; /* Position relative for absolute positioning of the underline */   
     }
     .resume-heading {
         font-size: 35px;
@@ -693,12 +728,18 @@ button:hover {
         padding: 7px 0;
     }
     #download-icon {
-        width: 35px;
+        width: 50px;
         height: auto;
         margin-right: 2vw;
+        margin-bottom: -5px;
     }
 
-    #project-section {margin-bottom: 20px;}
+    #project-section {
+        margin-bottom: 20px;
+    }
+    #projects-section .section-heading {
+        margin-bottom: 20px;
+    }
 
     .view-more {font-size: 20px;}
     #view-more-arrow-img {
@@ -709,8 +750,6 @@ button:hover {
     .project-container {width: 80vw;}
     .img-container {padding-left: 5vw;}
     .textbox-container {padding-right: 5vw;}
-
-
 
     #fun-fact-container {
         display: flex;
@@ -724,6 +763,12 @@ button:hover {
         justify-content: center;
         align-items: center;
         height: 5vh;
+        margin-top: -25px;
+        border-left: none;
+    }
+
+    #skills-section .section-heading {
+        margin-bottom: 20px;
     }
 }
 
@@ -780,6 +825,7 @@ button:hover {
     .work-title {font-size: 22px;}
     .content-text li {font-size: 18px;}
     .resume-heading-container a {margin-bottom: 8px;}
+    #mobile-skills-spacing {display: none;}
 
     .project-img {margin-left: 20px;}
     .project-title {font-size: 20px;}
@@ -859,6 +905,7 @@ button:hover {
     .work-title {font-size: 23px;}
     .content-text li {font-size: 20px;}
     .resume-heading-container a {margin-bottom: 15px;}
+    #mobile-skills-spacing {display: none;}
 
     .project-img {margin-left: 70px;}
     .textbox-container {padding-right: 70px;}
