@@ -595,21 +595,90 @@ button:hover {
     width: 100%;
 }
 
+.mobile-nav {
+    z-index: 20;
+}
+.mobile-nav:hover {
+    cursor: pointer;
+}
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.menuAnimate .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+.menuAnimate .bar2 {opacity: 0;}
+.menuAnimate .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+/* The Overlay (background) */
+.menu-overlay {
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 10; /* Sit on top */
+    left: 0;
+    top: 20;
+    background-color: var(--separation-colour); /* Black fallback color */
+    background-color: rgba(9, 12, 52, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.menu-overlay-content {
+    position: relative;
+    top: 25%; /* 25% from the top */
+    width: 100%; /* 100% width */
+    text-align: center; /* Centered text/links */
+    margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+}
+
+/* The navigation links inside the overlay */
+.menu-overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: white;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+/* When you mouse over the navigation links, change their color */
+.menu-overlay a:hover, .menu-overlay a:focus {
+    color: var(--highlight-colour);
+}
+
+/* Position the close button (top right corner) */
+.menu-overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+
 /* RESPONSIVE DESIGN */
 
 /* Mobile */
 @media (width <= 500px) {
     body {font-size: 15px;}
-    #header-link-container {
-        margin-right: 10px;
-        background-color: red;
-    }
+    #header-link-container {display: none;}
+
     #logo {padding-top: 12px;}
     #content-container {
         width: 100%;
     }
     #side-header-homepage {display: none;}
     .side-header {display: none;}
+    .mobile-nav {
+        margin-right: 20px;
+    }
     .content-text {
         border-left: none;
         text-align: center;
@@ -793,9 +862,9 @@ button:hover {
 /* Vertical */
 @media  (500px < width < 1090px), ((height < 620px) and (width >= 1460px))  {
     body {font-size: 20px;}
-    #header-link-container {
-        margin-right: 20px;
-        background-color: blue;
+    #header-link-container {display: none;}
+    .mobile-nav {
+        margin-right: 30px;
     }
     #logo {padding-top: 10px;}
     #content-container {
@@ -990,6 +1059,8 @@ button:hover {
     }
     #logo {padding-top: 8px;}
 
+    .mobile-nav {display: none;}
+    .overlay {display: none;}
     #side-header-homepage {
         height: calc(93vh - 60px - 12vh);
         padding-top: 10vh;
@@ -1069,6 +1140,8 @@ button:hover {
     }
     #logo {padding-top: 12px;}
 
+    .mobile-nav {display: none;}
+    .overlay {display: none;}
     #side-header-homepage {
         height: calc(85vh - 60px - 5vh);
         padding-top: 10vh;

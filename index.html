@@ -22,7 +22,7 @@
         <!-- Overall page container -->
         <section id="container">
             <!-- Navigation Header -->
-            <header id="nav-bar">
+            <nav id="nav-bar">
                 <a href="index.html">
                     <!-- logo image link -->
                     <img src="assets/logo_dark.svg"  
@@ -32,15 +32,28 @@
                         height=60px/>
                 </a>
                 <!-- header links -->
-                <header id="header-link-container">
+                <nav id="header-link-container">
                     <a href="pages/resume.html" class="header-link not-active">RESUME</a>
                     <a href="pages/projects.html" class="header-link not-active">PROJECTS</a>
                     <a href="pages/gallery.html" class="header-link not-active">GALLERY</a>
-                </header>
-            </header>
-    
+                </nav>
+                <nav class="mobile-nav" onclick="menuUnfold(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </nav>
+            </nav>    
             <!-- Container for Page Beneath the Header -->
             <section id="page-container">
+                <!-- The overlay for menu item -->
+                <div id="mobileNav" class="menu-overlay">
+                    <!-- Overlay content -->
+                    <div class="menu-overlay-content">
+                        <a href="pages/resume.html" class="header-link not-active">RESUME</a>
+                        <a href="pages/projects.html" class="header-link not-active">PROJECTS</a>
+                        <a href="pages/gallery.html" class="header-link not-active">GALLERY</a>
+                    </div>
+                </div>
                 <!-- Side Header -->
                 <section id="side-header-homepage">
                     <!-- personal details with external links  -->
@@ -391,17 +404,17 @@
                         </section>                       
                     </section>
                 </section> 
-            </section>
-            <section class="content-section" id="facts-section">
-                <span class="section-heading">
-                    FUN FACTS
-                </span>
-                <div id="fun-fact-container">
-                    <button onclick="getFunFact()" id="fun-fact-button">
-                        Click for a personal fun fact!
-                    </button>
-                    <div class="content-text" id="fun-fact"></div>
-                </div>
+                <section class="content-section" id="facts-section">
+                    <span class="section-heading">
+                        FUN FACTS
+                    </span>
+                    <div id="fun-fact-container">
+                        <button onclick="getFunFact()" id="fun-fact-button">
+                            Click for a personal fun fact!
+                        </button>
+                        <div class="content-text" id="fun-fact"></div>
+                    </div>
+                </section>
             </section>
             <section class="bottom-spacing"></section>
         </section>

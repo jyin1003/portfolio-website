@@ -310,3 +310,27 @@ function getFunFact() {
 
     typeWriter();
 }
+
+// ANIMATION FOR MENU BUTTON IN MOBILE VIEW
+function menuUnfold(x) {
+    x.classList.toggle("menuAnimate");
+    toggleNav();
+}
+
+function toggleNav() {
+    const overlay = document.getElementById("mobileNav");
+    if (overlay.style.width === "100%") {
+        overlay.style.width = "0%";
+    } else {
+        overlay.style.width = "100%";
+    }
+}
+
+function openNav() {
+    document.getElementById("mobileNav").style.display = "block";
+    document.getElementById("mobileNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("mobileNav").style.width = "0%";
+}

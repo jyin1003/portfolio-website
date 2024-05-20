@@ -22,7 +22,7 @@
         <!-- Overall page container -->
         <section id="container">
             <!-- Navigation Header -->
-            <header id="nav-bar">
+            <nav id="nav-bar">
             <a href="../index.html">
                 <!-- logo image link -->
                 <img src="../assets/logo_light.svg" 
@@ -32,13 +32,27 @@
                     height=60px/>
                 </a>
                 <!-- header links -->
-                <header id="header-link-container">
+                <nav id="header-link-container">
                     <a href="resume.html" class="header-link not-active">RESUME</a>
                     <a href="projects.html" class="header-link not-active">PROJECTS</a>
                     <a href="gallery.html" class="header-link not-active">GALLERY</a>
-                </header>
-            </header>
+                </nav>
+                <nav class="mobile-nav" onclick="menuUnfold(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </nav>
+            </nav>
             <section id="page-container">
+                <!-- The overlay for menu item -->
+                <div id="mobileNav" class="menu-overlay">
+                    <!-- Overlay content -->
+                    <div class="menu-overlay-content">
+                        <a href="resume.html" class="header-link not-active">RESUME</a>
+                        <a href="projects.html" class="header-link not-active">PROJECTS</a>
+                        <a href="gallery.html" class="header-link not-active">GALLERY</a>
+                    </div>
+                </div>
                 <section class="side-header">
                     <span class="name">PROJECTS</span>
                     <nav id ="side-header-links">
