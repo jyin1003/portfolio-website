@@ -526,8 +526,9 @@ button:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--separation-colour);
-    z-index: 999;
+    z-index: 8;
     padding: 30px; /* Increase padding */
+    padding-bottom: 15px;
     border-radius: 10px; /* Increase border radius */
     border-color: var(--separation-colour);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Increase box shadow */
@@ -850,8 +851,8 @@ button:hover {
     }
     .row {width: 90vw;}
     #popup-container img {
-        max-width: 80vw !important;
-        height: auto;
+        max-width: 70vw !important;
+        max-height: 60vh !important;
     }
 }
 
@@ -1044,7 +1045,7 @@ button:hover {
     }
     #popup-container img {
         max-width: 70vw !important;
-        height: auto;
+        max-height: 60vh !important;
     }
 }
 
