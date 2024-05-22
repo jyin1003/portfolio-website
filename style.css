@@ -860,7 +860,7 @@ button:hover {
 }
 
 /* Vertical */
-@media  (500px < width < 1090px), ((height < 620px) and (width >= 1460px)), (height <= 550px)  {
+@media  (500px < width < 900px), ((height < 620px) and (width >= 1460px)), (height < 520px)  {
     body {font-size: 18px;}
     #header-link-container {display: none;}
     .mobile-nav {
@@ -1005,7 +1005,7 @@ button:hover {
         justify-content: center;
         align-items: center;
         height: 5vh;
-        margin-top: -20px;
+        margin-top: -10px;
         border-left: none;
     }
 
@@ -1053,7 +1053,7 @@ button:hover {
 }
 
 /* Laptops */
-@media (height >= 550px) and (1090px <= width < 1460px) {
+@media (height >= 520px) and (900px <= width < 1460px) {
     body {
         font-size: 25px;
     }

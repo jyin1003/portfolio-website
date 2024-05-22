@@ -8,16 +8,20 @@ document.addEventListener('DOMContentLoaded', function() {
             // console.log('START');
             let maxIntersectionRatio = 0;
             let maxIntersectionSection = null;
+            const isAtTop = contentContainer.scrollTop === 0;
 
             entries.forEach(entry => {
                 // console.log('Entry:', entry.target);
                 let intersectionRatio = entry.intersectionRatio;
                 // console.log('Intersection Ratio:', intersectionRatio);
 
-                if (entry.target.id === 'facts-section' && intersectionRatio > 0.1) {
+                if (entry.target.id === 'facts-section' && intersectionRatio > 0.3) {
                     maxIntersectionRatio = 1; // Set to 1 to prioritize immediately
                     maxIntersectionSection = entry.target;
-                } else if (intersectionRatio > maxIntersectionRatio) {
+                } else if (entry.target.id === 'education-section' && isAtTop) {
+                    maxIntersectionRatio = 1; // Set to 1 to prioritize immediately
+                    maxIntersectionSection = entry.target;
+                }else if (intersectionRatio > maxIntersectionRatio) {
                     maxIntersectionRatio = intersectionRatio;
                     maxIntersectionSection = entry.target;
                 }            });
@@ -74,9 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Set up the observer initially
         setupObserver();
 
-        // Reinitialize the observer every 1 second
-        setInterval(setupObserver, 2000);
-
+        // Reinitialize the observer 
+        setInterval(setupObserver, 1000);
     })();
 });
 
