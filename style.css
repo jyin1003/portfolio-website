@@ -90,6 +90,7 @@ q {
 
     margin: 60px 5vw 0 5vw;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .side-header {
@@ -132,6 +133,8 @@ q {
     flex-direction: column;
 
     width: 55vw;
+
+    overflow-x: hidden;
 
     /* allow scrolling */
     overflow-y: auto;
@@ -552,7 +555,7 @@ button:hover {
     margin-top: 10px;
     max-width:90%;
 }
-.overlay {
+.overlay-picture {
     position: absolute;
     top: 8px;
     left: 0;
@@ -567,13 +570,13 @@ button:hover {
     justify-content: center;
     align-items: center;
 }
-.overlay::before {
+.overlay-picture::before {
     color: transparent;
 }
-.overlay-content::before {
+.overlay-content-picture::before {
     color: transparent;
 }
-.overlay-content {
+.overlay-content-picture {
     color: white;
     font-size: 20px;
     text-align: center;
@@ -582,7 +585,7 @@ button:hover {
 .gallery-picture {
     position: relative;
 }
-.gallery-picture:hover .overlay {
+.gallery-picture:hover .overlay-picture {
     opacity: 1; /* Show overlay on hover */
 }
 
@@ -857,7 +860,7 @@ button:hover {
 }
 
 /* Vertical */
-@media  (500px < width < 1090px), ((height < 620px) and (width >= 1460px))  {
+@media  (500px < width < 1090px), ((height < 620px) and (width >= 1460px)), (height <= 550px)  {
     body {font-size: 18px;}
     #header-link-container {display: none;}
     .mobile-nav {
@@ -1239,3 +1242,4 @@ button:hover {
         font-size: 30px;
     }
 }
+

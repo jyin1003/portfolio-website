@@ -5,59 +5,78 @@ document.addEventListener('DOMContentLoaded', function() {
         let scrollTimeoutId;
 
         const changeNav = (entries, observer) => {
-            console.log('START');
+            // console.log('START');
             let maxIntersectionRatio = 0;
             let maxIntersectionSection = null;
 
             entries.forEach(entry => {
-                console.log('Entry:', entry.target);
-                const intersectionRatio = entry.intersectionRatio;
-                console.log('Intersection Ratio:', intersectionRatio);
+                // console.log('Entry:', entry.target);
+                let intersectionRatio = entry.intersectionRatio;
+                // console.log('Intersection Ratio:', intersectionRatio);
 
-                if (intersectionRatio > maxIntersectionRatio) {
+                if (entry.target.id === 'facts-section' && intersectionRatio > 0.1) {
+                    maxIntersectionRatio = 1; // Set to 1 to prioritize immediately
+                    maxIntersectionSection = entry.target;
+                } else if (intersectionRatio > maxIntersectionRatio) {
                     maxIntersectionRatio = intersectionRatio;
                     maxIntersectionSection = entry.target;
-                    console.log('Max Intersection Section:', maxIntersectionSection);
-                }
-            });
+                }            });
 
             const updateNavLinks = () => {
                 if (maxIntersectionSection) {
                     const id = maxIntersectionSection.getAttribute('id');
-                    console.log('Active Section ID:', id);
+                    // console.log('Active Section ID:', id);
 
                     const navLinks = document.querySelectorAll('.side-header-link');
                     navLinks.forEach(link => {
                         if (link.getAttribute('href') !== `#${id}`) {
                             link.classList.remove('active');
-                            console.log('Removed "active" class from:', link);
+                            // console.log('Removed "active" class from:', link);
                         }
                     });
 
                     const newLink = document.querySelector(`a[href="#${id}"]`);
-                    console.log('new link:', newLink);
+                    // console.log('new link:', newLink);
 
                     if (newLink) {
                         newLink.classList.add('active');
-                        console.log('Added "active" class to new link.');
+                        // console.log('Added "active" class to new link.');
                     }
                 }
             };
 
             clearTimeout(scrollTimeoutId);
-            scrollTimeoutId = setTimeout(updateNavLinks, 100);
+            scrollTimeoutId = setTimeout(updateNavLinks, 200);
         };
 
+        const contentContainer = document.getElementById('content-container');
         const options = {
-            threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1]
+            root: contentContainer, // Set the root to contentContainer
+            rootMargin: '0px',
+            threshold: 0.01
+        };
+        const setupObserver = () => {
+            const contentContainer = document.getElementById('content-container');
+            const options = {
+                root: contentContainer,
+                rootMargin: '0px',
+                threshold: Array.from({ length: 21 }, (_, i) => i / 20) // [0, 0.05, 0.1, ..., 1]
+            };
+
+            const observer = new IntersectionObserver(changeNav, options);
+            const sections = document.querySelectorAll('.content-section');
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
         };
 
-        const observer = new IntersectionObserver(changeNav, options);
-        const sections = document.querySelectorAll('.content-section');
+        // Set up the observer initially
+        setupObserver();
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+        // Reinitialize the observer every 1 second
+        setInterval(setupObserver, 2000);
+
     })();
 });
 
