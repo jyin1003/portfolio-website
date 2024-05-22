@@ -34,7 +34,7 @@ body {
     height: 100vh;
 }
 
-b {color: var(--highlight-colour);}
+strong {color: var(--highlight-colour);}
 .hr {
     width: 100%; 
     height: 0;
