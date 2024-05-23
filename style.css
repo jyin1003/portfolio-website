@@ -325,6 +325,13 @@ ol {
     margin-right: 10px;
     font-weight: bold;
 }
+.project-spacing {
+    height: 5vh;
+}
+.inline-link {
+    color: var(--highlight-colour);
+    font-weight: bold;
+}
 
 /* picture slideshow */
 .slideshow-container {
