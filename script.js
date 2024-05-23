@@ -108,6 +108,7 @@ containers.forEach(container => {
 
 
 // PICTURE SLDESHOW
+/* Code inspired by W3Schools (see References) */
 document.addEventListener('DOMContentLoaded', function() {
     // Function to control slides
     function plusSlides(n) {
@@ -168,6 +169,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 // GALLERY FILTER
+/* Code inspired by W3Schools (see References) */
 filterSelection("all") // Execute the function and show all columns
 function filterSelection(c) {
     var x, i;
@@ -216,6 +218,7 @@ for (var i = 0; i < btns.length; i++) {
 }
 
 // POPUP ENLARGED GALLERY PICTURE
+/* Code inspired by W3Schools (see References) */
 // Get the popup container
 var popupContainer = document.getElementById("popup-container");
 var popupOverlay = document.querySelector(".popup-overlay");
@@ -257,15 +260,6 @@ closeBtn.addEventListener("click", closePopup);
 // Close the popup when clicking outside of it
 popupOverlay.addEventListener("click", closePopup);
 
-// UPLOAD PICTURE
-document.addEventListener('DOMContentLoaded', (event) => {
-    const chocolateButton = document.getElementById('chocolateButton');
-    const chocolateText = document.getElementById('chocolateText');
-
-    chocolateButton.addEventListener('click', () => {
-        chocolateText.textContent = 'Here is your chocolate!';
-    });
-});
 
 // GENERATE FUN FACT
 var typingInProgress = false;
@@ -302,6 +296,7 @@ function getFunFact() {
 
     button.classList.add('faded-button');
 
+    /* Code inspired by W3Schools (see References) */
     var i = 0;
     var txt = getRandomFact(); // Get a random text
     var speed = 50;
@@ -334,6 +329,7 @@ function getFunFact() {
 }
 
 // ANIMATION FOR MENU BUTTON IN MOBILE VIEW
+/* Code inspired by W3Schools (see References) */
 function menuUnfold(x) {
     x.classList.toggle("menuAnimate");
     toggleNav();

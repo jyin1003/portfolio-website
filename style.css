@@ -334,6 +334,7 @@ ol {
 }
 
 /* picture slideshow */
+/* Code inspired by W3Schools (see References) */
 .slideshow-container {
     display: flex;
     flex-direction: column;
@@ -461,6 +462,7 @@ ol {
 .section-subheading {margin-top: 20px;}
 
 /* Gallery elements */
+/* Code inspired by W3Schools (see References) */
 .gallery-option {margin-bottom: 15px;}
 .gallery-option::before { 
     background-color: transparent;
@@ -606,6 +608,7 @@ button:hover {
     width: 100%;
 }
 
+/* Code inspired by W3Schools (see References) */
 .mobile-nav {
     z-index: 20;
 }
@@ -628,6 +631,7 @@ button:hover {
 }
 
 /* The overlay for the mobile */
+/* Code inspired by W3Schools (see References) */
 .menu-overlay {
     display: flex;
     flex-direction: column;
