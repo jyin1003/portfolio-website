@@ -1,4 +1,4 @@
-/* WEBSITE SETTING */
+/* OVERALL WEBSITE SETTINGS */
 :root {
     --background-colour: rgb(9, 12, 52); /* #090c34 */
     --highlight-colour: rgb(139, 200, 238); /* #8bc8ee */
@@ -150,14 +150,14 @@ q {
     display: flex;
     flex-direction: column;
 }
-
 .content-text {
     border-left: 3px solid var(--separation-colour); /* Apply border to the left edge */
     padding-left: min(25px, 2vw); /* Add padding to create space between text and border */
     padding: min(30px, 2vh) min(25px, 2vw);
     margin: min(2vh, 15px) 0;
 }
-/* remove default margins */
+
+/* remove default margins depending on content ordering */
 .content-first {margin-top: 0;} 
 .content-last {margin-bottom: 0 !important;} 
 ul {
@@ -189,7 +189,7 @@ ol {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; /* separate name and info from header links */
 
     width: 30vw;
 
@@ -627,7 +627,7 @@ button:hover {
     transform: translate(0, -11px) rotate(45deg);
 }
 
-/* The Overlay (background) */
+/* The overlay for the mobile */
 .menu-overlay {
     display: flex;
     flex-direction: column;

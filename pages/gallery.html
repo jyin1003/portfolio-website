@@ -51,8 +51,10 @@
                     <a href="gallery.html" class="header-link not-active">GALLERY</a>
                 </div>
             </div>
+            <!-- Side Header -->
             <section id="gallery-buttons" class="side-header">
                 <span class="name">GALLERY FILTER</span>
+                <!-- Filter buttons -->
                 <button class="btn btn-active" onclick="filterSelection('all')">Show All</button>
                 <button class="btn" onclick="filterSelection('work-experience')">Work Experience</button>
                 <button class="btn" onclick="filterSelection('programs')">Programs</button>
@@ -60,21 +62,24 @@
                 <button class="btn" onclick="filterSelection('other')">Other</button>
             </section>
 
+            <!-- Scrollable content -->
             <section id="content-container">
                 <section id="content-container">
                     <section class="top-spacing"></section>
                     <div class="row">
-                        <div class="column">
+                        <!-- First column -->
+                        <div class="column"> <!-- Format page into 2 columns -->
                             <div class="gallery-picture programs">
                                 <a href="../pictures/Optiver_WOF.jpg" 
                                 class="popup-picture"
                                 data-description="A 3 day program where Optiver 
                                     invited female students to learn about Trading and
-                                    Tech.">
+                                    Tech."> <!-- Description for popup box -->
                                     <img src="../pictures/Optiver_WOF.jpg">
+                                    <!-- Overlay and description for mouse hover -->
                                     <div class="overlay-picture">
                                         <div class="overlay-content-picture">
-                                            Optiver: Women of the Future
+                                            Optiver: Women of the Future 
                                         </div>
                                     </div>
                                 </a>
@@ -195,6 +200,7 @@
                                 </a>
                             </div>
                         </div>
+                        <!-- Second column -->
                         <div class="column">
                             <div class="gallery-picture leadership">
                                 <a href="../pictures/UQES_2023_Market_Day.png" 
@@ -340,11 +346,12 @@
                             </div>
                         </div>
                     </div>
-                </section>                
+                </section>     
+                <!-- Popup Container to enlarge image with extra description upon click -->        
                 <div id="popup-container">
-                    <img id="popup-close" src="../assets/close.svg">
-                    <img id="popup-image" src="" alt="Popup Image">
-                    <div id="popup-description"></div>
+                    <img id="popup-close" src="../assets/close.svg"> <!-- Close button to close popup -->
+                    <img id="popup-image" src="" alt="Popup Image"> <!-- Image to be enlarged set by JS-->
+                    <div id="popup-description"></div> <!-- Description set by JS -->
                 </div>
             <section class="bottom-spacing"></section>
             </section> 
