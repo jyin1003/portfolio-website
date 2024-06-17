@@ -108,7 +108,7 @@ q {
     flex-direction: row;
     justify-content: space-between;
 
-    margin: 60px 5vw 0 5vw;
+    margin: 60px 2vw 0 2vw;
     overflow-y: auto;
     overflow-x: hidden;
 
@@ -154,7 +154,7 @@ q {
     display: flex;
     flex-direction: column;
 
-    width: 55vw;
+    width: 61.25vw;
 
     overflow-x: hidden;
 
@@ -513,7 +513,7 @@ button:hover {
     border: none !important;
 }
 .gallery-option-last {margin-bottom: 0px;}
-.gallery-container {margin-right: 1vw !important;}
+.gallery-container {margin-right: 1vw;}
 .gallery-img {
     width: 150%;
     height: auto;
@@ -876,7 +876,16 @@ button:hover {
         flex: 50%;
         max-width: 100%;
     }
-    .row {width: 90vw;}
+    .row {
+        display: flex;
+        justify-content: center;
+        width: 90vw;
+        padding-left: 0vw !important;
+    }
+    .gallery-container > #content-container > #content-container {
+        display: flex;
+        align-items: center;
+    }
     #popup-container img {
         max-width: 70vw !important;
         max-height: 60vh !important;
@@ -1069,6 +1078,10 @@ button:hover {
         max-width: 70vw !important;
         max-height: 60vh !important;
     }
+
+    .row {
+        padding-left: 8vw;
+    }
 }
 
 /* Laptops */
@@ -1240,7 +1253,11 @@ button:hover {
         padding-top: 8vh;
     }
 
-    #header-link-container {background-color: purple;}
+    .row {padding-right: 0px !important;}
+    .gallery-container > #content-container > #content-container {
+        display: flex;
+        align-items: center;
+    }
 }
 
 @media (width < 1460px) and (height > 650px) {
@@ -1255,6 +1272,12 @@ button:hover {
     .menu-overlay a {
         margin: 0px;
         font-size: 30px;
+    }
+
+    .row {padding-right: 0px !important;}
+    .gallery-container > #content-container > #content-container {
+        display: flex;
+        align-items: center;
     }
 }
 
