@@ -50,6 +50,27 @@ q {
 }
 .active {color: var(--highlight-colour);}
 
+/* animations for loading the page */
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slide-up {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* PAGE COMPONENTS */
 
 /*navigation bar*/
@@ -219,16 +240,6 @@ ol {
     text-decoration: none; /* remove hyperlink underline */
     width:auto;
     height: max(50px, 5vh);
-}
-#stats-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-    width: 90%;
-}
-#stat-info {
-    text-align: center;
 }
 
 /* resume elements */
@@ -713,8 +724,6 @@ button:hover {
     .name {
         font-size: 33px; 
     }
-    #stat-info {font-size: 18px !important;}
-
     .section-heading {
         font-size: 23px;
         text-align: center;
@@ -904,12 +913,8 @@ button:hover {
     }
     ul {text-align: left;}
     
-    #side-header-homepage {
-        display: none;
-    }
-    .side-header {
-        display: none;
-    }
+    #side-header-homepage {display: none;}
+    .side-header {display: none;}
     #header-info-mobile {
         display: flex;
         justify-content: space-between;
@@ -918,7 +923,6 @@ button:hover {
         font-size: 50px; 
     }
     #header-icons {margin-bottom: 20px;}
-    #stat-info {font-size: 20px !important;}
 
     .section-heading {
         font-size: 32px;
@@ -1087,8 +1091,6 @@ button:hover {
     #header-link-container {margin-right: 20px;}
     .header-link.not-active {font-size: 100%;} /* set font size to default when not active */
     .header-link.not-active:hover {font-size: 120%;} /* enlarge font upon hover */
-    #stats-container {padding-top: 10px;}
-    #stat-info {font-size: 18px;}
     #side-header-links a:hover {
         color: var(--highlight-colour);
         font-size: 1.1em; /* Increase text size when hovering */
@@ -1171,8 +1173,6 @@ button:hover {
         font-size: 30px;
     }
     .header-link.not-active:hover {font-size: 150%;}
-    #stats-container {padding-top: 20px;}
-    #stat-info {font-size: 25px;}
     #side-header-links a {font-size: 35px;}
     #side-header-links a:hover {
         color: var(--highlight-colour);
@@ -1225,8 +1225,8 @@ button:hover {
 /* Dynamic formatting for side header */
 @media (max-height: 580px) { /* change to vert layout at 460px max-height*/
     #side-header-homepage {
-        height: calc(90vh - 65px);
-        padding-top: 8vh;
+        height: calc(78vh - 65px);
+        padding-top: 12vh;
     }
 }
 
