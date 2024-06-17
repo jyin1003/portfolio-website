@@ -1,26 +1,15 @@
-# Portfolio Website Design Report
-
-## Introduction
-This provides an overview of the design and development of my portfolio website. The website serves as an online resume, showcasing my front-end development capabilities and providing technical recruiters with a detailed resource to assess my competencies.
+# Portfolio Website v2
 
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Prototyping](#prototyping)
-3. [Overall Design Intent](#overall-design-intent)
-4. [Homepage](#homepage)
-5. [Full Pages](#full-pages)
-6. [Design Decisions](#design-decisions)
-7. [Learnings](#learnings)
-8. [Challenges](#challenges)
-8. [Conclusion](#conclusion)
-9. [Future Work](#future-work)
+2. [Overall Design Intent](#overall-design-intent)
+3. [Homepage](#homepage)
+4. [Full Pages](#full-pages)
+5. [Problems with v2](#problems-with-v2)
+6. [Future Work](#future-work)
 
-## Prototyping
-### Wireframes and Sketches
-Initial design concepts were developed using wireframes and sketches. These low-fidelity prototypes guided the layout and structure of the site, ensuring a user-friendly experience from the outset.
-
-### High-Fidelity Prototypes
-High-fidelity designs were created to refine the visual and functional aspects of the site. These prototypes include detailed color schemes, typography, and interactive elements to closely simulate the final product.
+## Introduction
+This portfolio website was made using HTML, CSS and vanilla JS. It builds upon v1 by improving the HTML layout, adding JS interactions and slightly changing the website aesthetic. The website layout and structure remains largely the same as v1. 
 
 ## Overall Design Intent
 The design focuses on easy navigation and minimalistic aesthetics, tailored to the target audience of technical recruiters and software engineers. The use of dark mode aligns with developer preferences, and the color scheme was chosen to create a professional and tech-savvy environment.
@@ -43,24 +32,8 @@ Detailed content is available on dedicated pages, including:
 
 These pages offer comprehensive information for users who wish to delve deeper into my work and qualifications.
 
-## Design Decisions
-### Consistent Navigation
-A top header and sidebar provide constant navigation options, making it easy for users to explore the site without getting lost.
-
-### Visual Aesthetics
-Minimalist design principles were applied to reduce visual clutter. The color palette and layout choices aim to enhance readability and user engagement.
-
-### Accessibility and Usability
-Design decisions were guided by Nielsen’s Usability Heuristics, ensuring the site is user-friendly and accessible. Features like breadcrumb navigation and contextual help are implemented to improve the user experience.
-
-## Learnings
-I previously had experience in using HTML and CSS so learning how to improve website interactivity and implement additional functionalities using JavaScript greatly improved the resulting website. I also learned to appreciate semantic HTML tags as it made the HTML code much more readable. Implementation efficiency was also greatly improved by carefully weighing up the advantages and disadvantages between CSS vs JavaScript animations. With CSS, I had to grow more conscious of the naming to ensure that I haven’t accidentally reused the same name which would create ‘styling conflicts’. 
-
-## Challenges
+## Problems with v2
 Ensuring that the design was responsive to all screen sizes was extremely difficult with having a side-header as the vertical height also had to be considered. As such, all media queries were a combination of width and height constraints. Furthermore, the JavaScript implementation for the dynamic in-page navigation links is slightly glitchy as there is both a Timeout function that ensures that the navigation links don’t glitch from switching amongst themselves too fast as well as another setInterval function that reinitialises the IntersectionObserver to ensure that all page sections are being evaluated at equal time intervals rather than only when the intersection ratio changes. Furthermore, the information popup bubbles for the tech stack sections required custom positioning based on the screen-size to ensure they fit but because it relied on the data attribute, I was unsuccessful in trying to style it to wrap into a column when the screen size was smaller. Even then, the bubbles are cutoff when the screen size becomes too narrow. Finally, rearranging all the elements for the mobile/tablet view after the side header was removed was very time-consuming as almost every single HTML element needed to be reconfigured and restyled to suit the new viewport size.
-
-## Conclusion
-This report outlines the design journey from initial concepts to final high-fidelity prototypes, highlighting key design decisions and their rationale. The portfolio website successfully combines professional presentation with a personal touch, creating an effective online resume.
 
 ## Future Work
 Future enhancements will focus on:
