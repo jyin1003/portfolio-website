@@ -475,6 +475,14 @@ ol {
     height: 25px
 }
 .section-subheading {margin-top: 20px;}
+#project-point {
+    margin: 0;
+    margin-bottom: -10px;
+    padding-inline-start: 30px;
+}
+#project-point > li {
+    padding-left: 10px;
+}
 
 /* Gallery elements */
 /* Code inspired by W3Schools (see References) */
