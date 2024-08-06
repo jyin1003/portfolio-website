@@ -713,6 +713,11 @@ button:hover {
     .mobile-nav {
         margin-right: 20px;
     }
+    #stats-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     .content-text {
         border-left: none;
         text-align: center;
@@ -918,6 +923,9 @@ button:hover {
         border-right: none;
         width: 80vw; 
     }
+    .content-text ol {
+        text-align: left;
+    }
     .short-content {
         width: 80vw;
         max-width: 80vw;
@@ -1062,7 +1070,8 @@ button:hover {
         border-bottom: 5px solid var(--separation-colour);
     }
     .external-link-container {margin-bottom: 20px;}
-    .proj-desc {margin-top: 0;}
+    .proj-desc {margin-top: 10px;}
+    #project-point > li {margin-bottom: 15px;}
     .bubble {
         text-align: center;        
     }
